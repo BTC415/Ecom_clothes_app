@@ -1,0 +1,160 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <ngu-carousel
+      #myCarousel
+      [inputs]="carouselConfig"
+      [dataSource]="carouselItems"
+      (carouselLoad)="carouselTileLoad($event)"
+    >
+      <div *nguCarouselDef="let item" class="item">
+        <img class="homeimage" [src]="item" />
+      </div>
+      <!-- <button NguCarouselNext class="rightRs">></button>
+        <button NguCarouselPrev class="leftRs"><</button> -->
+    </ngu-carousel>
+  </div>
+</div>
+<div class="row" style="height: 4rem"></div>
+<div class="container">
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide-to="0"
+        class="active"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide-to="1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide-to="2"
+      ></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="row">
+        <div class="col-4">
+          <div class="card senimagecard">
+            <img src="assets/images/3-1.webp" />
+            <div class="lc-content">
+              <h2 class="ctah2">new arrivals</h2>
+              <p class="cta">shop now</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card senimagecard">
+            <img src="assets/images/3-2.webp" />
+            <div class="lc-content">
+              <h2 class="ctah2">wedding guest</h2>
+              <p class="cta">shop now</p>
+            </div>
+            <div class="banner-bottom">
+              <div class="slant"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card senimagecard">
+            <img src="assets/images/3-3.webp" />
+            <div class="lc-content">
+              <h2 class="ctah2">suiting</h2>
+              <p class="cta">shop now</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#demo"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#demo"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-4">
+      <div class="card senimagecard">1</div>
+    </div>
+    <div class="col-4">
+      <div class="card senimagecard">1</div>
+    </div>
+    <div class="col-4">
+      <div class="card senimagecard">1</div>
+    </div>
+  </div> -->
+</div>
+
+<div class="row" style="height: 4rem"></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <video src="assets/videos/video-1.mp4" autoplay loop controls></video>
+  </div>
+</div>
+
+<div class="row" style="height: 3rem"></div>
+<div class="container">
+  <div class="row contentrow">
+    <h2 class="LAVISHALICE">#LAVISHALICE</h2>
+    <p class="showp">
+      Show us what you're loving and<br />
+      how you're wearing it.
+    </p>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-3 jointcard1">
+      <img src="assets/images/j-1.jpg" class="image1" />
+    </div>
+    <div class="col-3 jointcard2">
+      <img src="assets/images/j-2.jpg" class="image2" />
+    </div>
+    <div class="col-3 jointcard3">
+      <img src="assets/images/j-3.jpg" class="image3" />
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-3 jointcard1" style="margin-top: 4px;">
+      <img src="assets/images/j-4.jpg" class="image1" />
+    </div>
+    <div class="col-3 jointcard2" style="margin-top: 4px;">
+      <img src="assets/images/j-5.jpg" class="image2" />
+    </div>
+    <div class="col-3 jointcard3" style="margin-top: 4px;">
+      <img src="assets/images/j-6.jpg" class="image3" />
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row trending">
+        <p class="trendingnow">Trending Now</p>
+    </div>
+</div>

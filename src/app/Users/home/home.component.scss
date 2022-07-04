@@ -1,0 +1,202 @@
+.bannerStyle h1 {
+  background-color: #ccc;
+  min-height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+//   .leftRs {
+//     // position: absolute;
+//     // margin: auto;
+//     // top: 0;
+//     // bottom: 0;
+//     // width: 50px;
+//     // height: 50px;
+//     // box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
+//     // border-radius: 999px;
+//     // left: 0;
+//   }
+
+//   .rightRs {
+//     position: absolute;
+//     margin: auto;
+//     top: 0;
+//     bottom: 0;
+//     width: 50px;
+//     height: 50px;
+//     box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
+//     border-radius: 999px;
+//     right: 0;
+//   }
+
+.ngucarouselPoint {
+  list-style-type: none;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+  box-sizing: border-box;
+}
+.ngucarouselPoint li {
+  display: inline-block;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 5px;
+  margin: 0 3px;
+  transition: 0.4s ease all;
+}
+.ngucarouselPoint li.active {
+  background: white;
+  width: 10px;
+}
+.homeimage {
+  height: 40rem;
+}
+.homeimage:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.senimagecard {
+  //   height: 33rem;
+  width: 387px;
+}
+.lc-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.lc-content .cta {
+  font-family: fugueregular;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 45px;
+  width: 100%;
+}
+.lc-content .ctah2 {
+  font-family: fugueregular, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #fff;
+  text-transform: lowercase;
+  position: absolute;
+  top: 50%;
+  margin: -24px 10% 0;
+  width: 80%;
+}
+.senimagecard:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.banner-bottom {
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.banner-bottom .slant {
+  height: 50px;
+  background-image: url(//cdn.shopify.com/s/files/1/0041/2952/t/2/assets/topper.png?1781658\2026);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+// .contentrow{
+//     background-color: red;
+// }
+.LAVISHALICE {
+  font-family: fugueregular;
+  margin: 0 0 25px;
+  padding: 0;
+  font-size: 2.5rem;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  text-align: center;
+  font-weight: 900;
+}
+.showp {
+  font-family: fugueregular;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  margin: 0 0 35px;
+  font-weight: 700;
+  font-size: 17px;
+}
+.jointcard1 {
+  margin-left: -5rem;
+}
+.jointcard2 {
+  height: 447px;
+  margin-left: 4px;
+  width: 465px;
+}
+.image2 {
+    height: 447px;
+    width: 440px;
+    margin-left: 73px;
+}
+.image2:hover{
+    background: rgba(76, 175, 80, 0.3);
+    opacity: 0.6;
+    cursor: pointer;
+}
+.image1:hover{
+    background: rgba(76, 175, 80, 0.3);
+    opacity: 0.6;
+    cursor: pointer;
+}
+.image3:hover{
+    background: rgba(76, 175, 80, 0.3);
+    opacity: 0.6;
+    cursor: pointer;
+}
+.image1 {
+    height: 447px;
+    width: 435px;
+    margin-left: -8px;
+}
+.image3 {
+    height: 447px;
+    width: 460px;
+    margin-left: 42px;
+}
+.jointcard3 {
+  margin-left: 9px;
+}
+.trending{
+    height: 5rem;
+}
+.trendingnow{
+    font-family: fugueregular,sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    letter-spacing: 0;
+    text-transform: lowercase;
+    text-align: center;
+    font-weight: 700;
+    line-height: 4;
+}
+@media only screen and (max-width: 490px) {
+}

@@ -1,0 +1,127 @@
+.firstnav {
+  // background-color: red;
+  box-sizing: border-box;
+  display: block;
+  z-index: 95;
+  max-width: 1440px;
+  padding: 12px 30px;
+  margin: 0 auto;
+  position: relative;
+  opacity: 1;
+  height: 3rem;
+}
+.india {
+  color: #333333;
+}
+.hrline {
+  border-bottom: 1px solid #e3e3e3;
+}
+.sencondrow {
+  height: 4rem;
+  //   background: red;
+}
+.searchinput {
+  border: 0;
+  font-family: fugueregular;
+  font-size: 17.9px;
+  text-transform: lowercase;
+  margin: 0 0 0 2.5%;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 3.5px 0;
+  width: 225px;
+  border: none;
+  height: 32px;
+  margin-top: 13px;
+}
+input:focus,
+.searchinput:active {
+  outline: none !important;
+  box-shadow: none;
+}
+button:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.fa-search {
+  color: black;
+}
+.serachdiv {
+  display: flex;
+}
+input:hover {
+  border-bottom: 1px solid black;
+}
+.btnsearch {
+  margin-left: -50px;
+}
+.img {
+  height: 42px;
+}
+.imageheader {
+  text-align: center;
+  margin-top: 13px;
+}
+.rightbar {
+  display: flex;
+  justify-content: end;
+  padding: 0 15px 10px;
+}
+li {
+  list-style: none;
+  margin-top: 13px;
+  font-family: fugueregular;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+a {
+  color: black;
+  text-decoration: none;
+  margin-top: 13px;
+  font-family: fugueregular;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-left: 20px;
+}
+.thirdrow {
+  background: #ffeeee;
+  height: 3rem;
+  padding-bottom: 5px;
+}
+.free {
+  color: #000000;
+  text-align: center;
+  text-transform: none;
+  font-family: "fugueregular";
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 2px;
+  line-height: 0.2;
+}
+.fourthrow {
+  display: flex;
+}
+.navbarfourth {
+  display: flex;
+  justify-content: center;
+}
+.navitem {
+  font-family: "fugueregular";
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: lowercase;
+  padding: 20px 25px 30px;
+  font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  .india {
+    text-align: center;
+  }
+  .img {
+    height: 30px;
+  }
+}
