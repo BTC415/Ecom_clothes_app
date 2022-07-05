@@ -6,6 +6,7 @@
       [inputs]="carouselConfig"
       [dataSource]="carouselItems"
       (carouselLoad)="carouselTileLoad($event)"
+      class="carousell"
     >
       <div *nguCarouselDef="let item" class="item">
         <img class="homeimage" [src]="item" />
@@ -109,7 +110,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <video src="assets/videos/video-1.mp4" autoplay loop controls></video>
+    <video src="assets/videos/video-1.mp4" autoplay loop controls [muted]="'muted'"></video>
   </div>
 </div>
 
@@ -140,13 +141,13 @@
   </div>
   <div class="row">
     <div class="col-1"></div>
-    <div class="col-3 jointcard1" style="margin-top: 4px;">
+    <div class="col-3 jointcard1" style="margin-top: 4px">
       <img src="assets/images/j-4.jpg" class="image1" />
     </div>
-    <div class="col-3 jointcard2" style="margin-top: 4px;">
+    <div class="col-3 jointcard2" style="margin-top: 4px">
       <img src="assets/images/j-5.jpg" class="image2" />
     </div>
-    <div class="col-3 jointcard3" style="margin-top: 4px;">
+    <div class="col-3 jointcard3" style="margin-top: 4px">
       <img src="assets/images/j-6.jpg" class="image3" />
     </div>
     <div class="col-2"></div>
@@ -154,7 +155,240 @@
 </div>
 
 <div class="container">
-    <div class="row trending">
-        <p class="trendingnow">Trending Now</p>
-    </div>
+  <div class="row trending">
+    <p class="trendingnow">Trending Now</p>
+  </div>
 </div>
+
+<div class="container-fluid">
+  <div class="row" style="padding: 20px"></div>
+  <div class="col-12">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 scrollrow">
+              <img src="assets/images/s-1.webp" height="591px" width="384px" />
+            </div>
+            <div class="col-sm-4 scrollrow">
+              <img src="assets/images/ss-2.webp" height="591px" width="384px" />
+            </div>
+            <div class="col-sm-4 scrollrow">
+              <img src="assets/images/s-3.webp" height="591px" width="384px" />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 scrollrow">
+              <img src="assets/images/s-4.webp" height="591px" width="384px" />
+            </div>
+            <div class="col-sm-4 scrollrow">
+              <img src="assets/images/s-5.webp" height="591px" width="384px" />
+            </div>
+            <div class="col-sm-4 scrollrow">
+              <img src="assets/images/s-6.webp" height="591px" width="384px" />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row" style="padding: 20px"></div>
+  <div class="col-12">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 desscrollrow">
+              <p class="descroll">
+                Cowl Neck One Shoulder Wrap Dress In Lavender
+              </p>
+              <p class="price">Rs. 8,950.00</p>
+            </div>
+            <div class="col-sm-4 desscrollrow">
+              <p class="descroll">Pleated Off Shoulder Midi Dress In Blue</p>
+              <p class="price">Rs. 9,950.00</p>
+            </div>
+            <div class="col-sm-4 desscrollrow">
+              <p class="descroll">
+                One Ruffle Sleeve Blazer Dress In Cornflower Blue
+              </p>
+              <p class="price">Rs. 10,990.00</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 desscrollrow">
+              <p class="descroll">
+                Asymmetric Ruffle Detail Midi Dress In White
+              </p>
+              <p class="price">Rs. 6,560.00</p>
+            </div>
+            <div class="col-sm-4 desscrollrow">
+              <p class="descroll">Bow Shoulder Asymmetric Dress In Yellow</p>
+              <p class="price">Rs. 9,531.00</p>
+            </div>
+            <div class="col-sm-4 desscrollrow">
+              <p class="descroll">Balloon Sleeve Mini Dress In Blue Floral</p>
+              <p class="price">Rs. 6,653.00</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row" style="height: 4rem"></div>
+</div>
+<!-- <div class="container-fluid">
+  <div class="row">
+    <hr />
+    <h2 class="mailing">Join Our Mailing List</h2>
+    <p class="mainingptag">
+      Sign up for our emails including latest trends, fashion & offers.
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="display: flex; justify-content: center; margin-bottom: 40px;">
+      <input type="email" class="form-control" placeholder="email address" />
+      <button class="btn btnsearch"><i class="fa fa-angle-left"></i></button>
+    </div>
+    <div class="col-4"></div>
+    <hr>
+  </div>
+</div> -->
+<!-- <div class="container-fluid">
+  <div class="row" style="height: 3rem"></div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2 class="footer-h2">Your Order</h2>
+      <h6>faqs</h6>
+      <h6>cookie policy</h6>
+      <h6>privacy policy</h6>
+      <h6>contact us</h6>
+    </div>
+    <div class="col-md-3">
+      <h2 class="footer-h2">Delivery</h2>
+      <h6>delivery</h6>
+      <h6>terms & conditions</h6>
+      <h6>returns</h6>
+    </div>
+    <div class="col-md-3">
+      <h2 class="footer-h2">Customer Info</h2>
+      <h6>student discount</h6>
+      <h6>affiliates</h6>
+      <h6>about us</h6>
+      <h6>sign in/register</h6>
+    </div>
+    <div class="col-md-3">
+      <h2 class="footer-h2">Follow Us</h2>
+      <ul style="display: flex; list-style: none; margin-left: -2rem">
+        <li>
+          <a href="https://www.instagram.com/lavishalice/" target="_blank"
+            ><img
+              src="//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/instagram.png?v=28936205508747211461651157364"
+              height="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/LavishAlice" target="_blank"
+            ><img
+              src="//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/twitter.jpg?v=115916706138817204721651157365"
+              height="30px"
+              style="margin-left: 19px"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/LavishAlice/" target="_blank"
+            ><img
+              src="//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/facebook.png?v=89423103650251595061651157365"
+              height="30px"
+              style="margin-left: 19px"
+          /></a>
+        </li>
+      </ul>
+      <ul style="display: flex; list-style: none; margin-left: -2rem">
+        <li>
+          <a
+            href="https://apps.apple.com/gb/app/lavish-alice/id1513213999"
+            target="_blank"
+            ><img
+              src="https://cdn.shopify.com/s/files/1/2722/8634/files/download-on-the-app-store.png"
+              height="50px"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://play.google.com/store/apps/details?id=co.tapcart.app.id_KcjGTciLN6&hl=en"
+            target="_blank"
+            ><img
+              src="https://cdn.shopify.com/s/files/1/2722/8634/files/google-play-badge_crop.png"
+              height="50px"
+              style="margin-left: 19px"
+          /></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="row" style="margin-top: 4rem;">
+    <div class="col-md-3">
+      <p class="reserved">Lavish Alice. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <ul style="display: flex; list-style: none; margin-left: -2rem ; margin-bottom: 50px;">
+        <li>
+          <img
+            src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/amazon-92e856f82cae5a564cd0f70457f11af4d58fa037cf6e5ab7adf76f6fd3b9cafe.svg"
+            width="40"
+          />
+        </li>
+        <li>
+          <img
+            src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/american_express-2264c9b8b57b23b0b0831827e90cd7bcda2836adc42a912ebedf545dead35b20.svg"
+            width="40"
+            style="margin-left: 6px"
+          />
+          <img
+            src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/apple_pay-f6db0077dc7c325b436ecbdcf254239100b35b70b1663bc7523d7c424901fa09.svg"
+            width="40"
+            style="margin-left: 6px"
+          />
+          <img
+            src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/maestro-d2055c6b416c46cf134f393e1df6e0ba31722b623870f954afd392092207889c.svg"
+            width="40"
+            style="margin-left: 6px"
+          />
+          <img
+            src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/master-173035bc8124581983d4efa50cf8626e8553c2b311353fbf67485f9c1a2b88d1.svg"
+            width="40"
+            style="margin-left: 6px"
+          />
+          <img
+            src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/paypal-49e4c1e03244b6d2de0d270ca0d22dd15da6e92cc7266e93eb43762df5aa355d.svg"
+            width="40"
+            style="margin-left: 6px"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div> -->
+<app-footer></app-footer>

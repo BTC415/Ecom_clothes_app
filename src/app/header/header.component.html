@@ -7,7 +7,7 @@
     <div class="col-md-3"></div>
   </div>
   <div class="row hrline"></div>
-  <div class="row sencondrow">
+  <div class="row sencondrow" [ngClass]="{ header_sticky: isSticky }">
     <div class="col-md-4">
       <div class="serachdiv">
         <input
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-4 imageheader">
       <img
-        class="img"
+        class="img img_header"
         src="https://cdn.shopify.com/s/files/1/2722/8634/t/72/assets/main-logo2.svg?v=47689786623452027641651157365"
       />
     </div>
@@ -36,7 +36,7 @@
           ₹INR
         </li>
         <li>
-          <a routerLink="/login"
+          <a class="account" routerLink="/login"
             ><img
               src="//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/account-icon.svg?v=180824494737641918611651157365"
               width="20"
@@ -60,7 +60,7 @@
   </div>
   <div class="row thirdrow">
     <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-4" [ngClass]="{ sticky: isSticky }">
       <a class="free"><p>Free UK Delivery Over £120</p></a>
     </div>
     <div class="col-md-4"></div>
@@ -68,17 +68,66 @@
   <div class="row fourthrow">
     <div class="col-sm-12">
       <ul class="navbarfourth">
-        <li>
-          <a class="navitem"> Clothing</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle myDIV"
+            routerLink="/home"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            clothing
+          </a>
+          <ul class="dropdown-menu hide" aria-labelledby="navbarDropdown">
+            <div class="container">
+              <div class="row submenu-row">
+                <div class="col-md-3">
+                  <li class="mainmenu">collection</li>
+                  <li><a class="collection-menu">the main event</a></li>
+                  <li><a class="collection-menu">resort</a></li>
+                  <li><a class="collection-menu">holiday collection</a></li>
+                  <li><a class="collection-menu">holiday collection</a></li>
+                  <li><a class="collection-menu">holiday collection</a></li>
+                </div>
+                <div class="col-md-3">
+                  <li class="mainmenu">category</li>
+                  <li>
+                    <a class="collection-menu" href="#">the main event</a>
+                  </li>
+                  <li><a class="collection-menu" href="#">resort</a></li>
+                  <li>
+                    <a class="collection-menu" href="#">holiday collection</a>
+                  </li>
+                </div>
+                <div class="col-md-3">
+                  <li class="mainmenu">edit</li>
+                  <li>
+                    <a class="collection-menu" href="#">the main event</a>
+                  </li>
+                  <li><a class="collection-menu" href="#">resort</a></li>
+                  <li>
+                    <a class="collection-menu" href="#">holiday collection</a>
+                  </li>
+                </div>
+                <div class="col-md-3">
+                  <img
+                    src="//cdn.shopify.com/s/files/1/2722/8634/files/E21.2_Clothing_Banner_600x.progressive.jpg?v=1647628192"
+                    style="width: 11rem; margin-left: -10px; height: 14rem"
+                  />
+                </div>
+              </div>
+            </div>
+          </ul>
         </li>
         <li>
-          <a class="navitem"> new in</a>
+          <div class="new-in"><a class="nav_item"> new in</a></div>
         </li>
         <li>
-          <a class="navitem"> Outlet</a>
+          <div class="outlet"><a class="nav_item"> Outlet</a></div>
         </li>
         <li>
-          <a class="navitem"> #lavishalice</a>
+          <div class="lavish"><a class="nav_item"> #lavishalice</a></div>
         </li>
       </ul>
     </div>

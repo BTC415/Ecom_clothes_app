@@ -9,21 +9,21 @@ import { SignupComponent } from './Users/signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { NguCarouselModule } from '@ngu/carousel';
-import { YouTubePlayerModule } from "@angular/youtube-player";
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NguCarouselModule,
-    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

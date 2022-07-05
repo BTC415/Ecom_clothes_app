@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'; 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,7 +27,12 @@ export class HomeComponent implements OnInit {
       height: 600,
     },
   };
-  constructor(private _cdr: ChangeDetectorRef) {}
+  constructor(private _cdr: ChangeDetectorRef,config: NgbCarouselConfig) {
+    config.interval = 2000;  
+    config.wrap = true;  
+    config.keyboard = false;  
+    config.pauseOnHover = false;  
+  }
 
   ngOnInit(): void {}
   ngAfterViewInit() {

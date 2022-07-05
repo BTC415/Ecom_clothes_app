@@ -1,1 +1,21 @@
-<p>signup works!</p>
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <img src="assets/images/home-2.webp" style="margin-bottom: 50px;" height="700px" />
+    <div class="col-md-4"></div>
+    <div class="col-md-4 login-form">
+      <h2 class="login">Create Account</h2>
+      <form>
+        <input type="text" class="form-control" placeholder="First Name" required/><br>
+        <input type="text" class="form-control" placeholder="Last Name" required/><br>
+        <input type="email" class="form-control" placeholder="Email" required/><br>
+        <input type="password" class="form-control" placeholder="Password" required/>
+        <input type="submit" class="btn btnsignin" value="Create Account">
+        <p class="form-text-account">
+            <a routerLink="/signup" class="forgot-pwd">Login Now</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

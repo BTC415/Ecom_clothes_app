@@ -1,0 +1,93 @@
+// .login-image {
+//   width: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+// }
+.login-form {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  margin: 352px 0 0 -225px;
+  z-index: 100;
+  width: 450px;
+  display: inline-block;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px 50px;
+}
+.login {
+  font-family: 'fugueregular';
+  margin: 0;
+  padding: 0;
+  font-size: 39px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 21px;
+}
+input {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  width: 100%;
+  background: #FFF;
+  border: 0;
+  margin: 1rem 0 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #777;
+  font-family: 'Avenir Medium';
+}
+input:focus,
+.searchinput:active {
+  outline: none !important;
+  box-shadow: none;
+  border: 2px solid black;
+}
+.form-text {
+  text-align: right;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #777;
+  font-family: 'Avenir Medium';
+  margin-top: 10px;
+}
+.form-text-account{
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #777;
+    font-family: 'Avenir Medium';
+    margin-top: 10px;
+    cursor: pointer;
+}
+.forgot-pwd {
+  color: #777;
+  cursor: pointer;
+  font-family: 'Avenir Medium';
+}
+.btnsignin{
+    width: 200px;
+    background: #000;
+    font-family: 'fugueregular';
+    margin: 1rem 75px 0;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0;
+}
+#contenttmenu{
+  display: block;
+  color: white;
+  background-color: red;
+  width: 10rem;
+}

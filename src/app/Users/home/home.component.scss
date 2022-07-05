@@ -56,10 +56,14 @@
 .homeimage {
   height: 40rem;
 }
-.homeimage:hover {
+.carousell:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+// .homeimage:hover {
+//   opacity: 0.8;
+//   cursor: pointer;
+// }
 .senimagecard {
   //   height: 33rem;
   width: 387px;
@@ -152,51 +156,141 @@
   width: 465px;
 }
 .image2 {
-    height: 447px;
-    width: 440px;
-    margin-left: 73px;
+  height: 447px;
+  width: 440px;
+  margin-left: 73px;
 }
-.image2:hover{
-    background: rgba(76, 175, 80, 0.3);
-    opacity: 0.6;
-    cursor: pointer;
+.image2:hover {
+  background: rgba(76, 175, 80, 0.3);
+  opacity: 0.6;
+  cursor: pointer;
 }
-.image1:hover{
-    background: rgba(76, 175, 80, 0.3);
-    opacity: 0.6;
-    cursor: pointer;
+.image1:hover {
+  background: rgba(76, 175, 80, 0.3);
+  opacity: 0.6;
+  cursor: pointer;
 }
-.image3:hover{
-    background: rgba(76, 175, 80, 0.3);
-    opacity: 0.6;
-    cursor: pointer;
+.image3:hover {
+  background: rgba(76, 175, 80, 0.3);
+  opacity: 0.6;
+  cursor: pointer;
 }
 .image1 {
-    height: 447px;
-    width: 435px;
-    margin-left: -8px;
+  height: 447px;
+  width: 435px;
+  margin-left: -8px;
 }
 .image3 {
-    height: 447px;
-    width: 460px;
-    margin-left: 42px;
+  height: 447px;
+  width: 460px;
+  margin-left: 42px;
 }
 .jointcard3 {
   margin-left: 9px;
 }
-.trending{
-    height: 5rem;
+.trending {
+  height: 5rem;
 }
-.trendingnow{
-    font-family: fugueregular,sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 2.5rem;
-    letter-spacing: 0;
-    text-transform: lowercase;
-    text-align: center;
-    font-weight: 700;
-    line-height: 4;
+.trendingnow {
+  font-family: fugueregular, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  text-align: center;
+  font-weight: 700;
+  line-height: 4;
+}
+
+.scrollrow {
+  // background-color: red;
+  margin-left: 26px;
+  width: 25rem;
+  // height: 34rem;
+}
+
+.descroll {
+  font-family: fugueregular;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 1rem;
+  margin: 1.1rem 0 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+.price {
+  font-family: fugueregular;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 1rem;
+  margin: 1.1rem 0 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+.mailing {
+  font-family: fugueregular;
+  margin: 0;
+  padding: 0;
+  font-size: 34px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 11px;
+}
+.mainingptag {
+  font-family: Avenir Medium;
+  text-align: center;
+  font-size: 18px;
+}
+input:focus,
+.searchinput:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.form-control {
+  font-family: fugueregular;
+  font-size: 17.9px;
+  text-transform: lowercase;
+  margin: 0 0 0 2.5%;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 3.5px 0;
+  width: 225px;
+  border: none;
+  height: 32px;
+  margin-top: 13px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+button:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.fa-angle-left {
+  font-size: 28px;
+  margin-top: 4px;
+  margin-left: -54px;
+  color: rgb(230, 230, 230);
+}
+.footer-h2{
+  font-family: fugueregular;
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-weight: 600;
+  margin-bottom: 33px;
+}
+.reserved{
+  text-align: left;
+  height: 24px;
+  line-height: 24px;
+  font-size: 17px;
 }
 @media only screen and (max-width: 490px) {
 }

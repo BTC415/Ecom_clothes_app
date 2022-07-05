@@ -1,0 +1,64 @@
+.mailing {
+    font-family: fugueregular;
+    margin: 0;
+    padding: 0;
+    font-size: 34px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 11px;
+  }
+  .mainingptag {
+    font-family: Avenir Medium;
+    text-align: center;
+    font-size: 18px;
+  }
+  input:focus,
+  .searchinput:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+  .form-control {
+    font-family: fugueregular;
+    font-size: 17.9px;
+    text-transform: lowercase;
+    margin: 0 0 0 2.5%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 3.5px 0;
+    width: 225px;
+    border: none;
+    height: 32px;
+    margin-top: 13px;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  button:focus,
+  .btn:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+  .fa-angle-left {
+    font-size: 28px;
+    margin-top: 4px;
+    margin-left: -54px;
+    color: rgb(230, 230, 230);
+  }
+  .footer-h2{
+    font-family: fugueregular;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: lowercase;
+    font-weight: 600;
+    margin-bottom: 33px;
+  }
+  .reserved{
+    text-align: left;
+    height: 24px;
+    line-height: 24px;
+    font-size: 17px;
+  }
