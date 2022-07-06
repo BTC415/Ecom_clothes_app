@@ -10,6 +10,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { NguCarouselModule } from '@ngu/carousel';
 import { FooterComponent } from './footer/footer.component';
+import { ClothingComponent } from './Product/clothing/clothing.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { OneProductComponent } from './Product/one-product/one-product.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +23,19 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     SignupComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ClothingComponent,
+    OneProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NguCarouselModule,
+    BrowserAnimationsModule,
+    NgxGalleryModule,
+    IvyCarouselModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

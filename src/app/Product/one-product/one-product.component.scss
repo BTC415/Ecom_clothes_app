@@ -1,0 +1,333 @@
+.gallery-wrapper {
+  text-align: center;
+  margin-top: 50px;
+  .ngx-gallery {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+.clothing_detail {
+  margin-top: 50px;
+}
+hr {
+  height: 1px;
+  width: 36rem;
+  margin-left: 3rem;
+  margin-top: 2px;
+}
+.statement {
+  font-family: "fugueregular";
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  margin-left: 3rem;
+}
+.rs {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  font-family: fugueregular;
+  font-weight: 600;
+  margin-left: 6rem;
+}
+.product-variant-select-label {
+  display: block;
+  margin-bottom: 0.25em;
+  text-transform: lowercase;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  font-family: fugueregular;
+  //   font-weight: 600;
+  margin-left: 6rem;
+}
+.product_select {
+  width: 80%;
+  padding: 10px;
+  border-color: #000;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+  margin-left: 8rem;
+}
+.product_option {
+  color: #838383;
+  background-color: #fff;
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+.iwishAddWrap {
+  width: 80%;
+  margin: 1em auto;
+  text-align: center;
+  text-transform: lowercase;
+}
+.iWishAdd {
+  touch-action: manipulation;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+  text-transform: lowercase;
+  margin-left: 10rem;
+  color: black;
+}
+.btnsold {
+  font-family: Avenir Medium;
+  background: #000;
+  color: #fff;
+  border: 0;
+  width: 80%;
+  margin: 0 auto;
+  text-transform: lowercase;
+  padding: 20px 0;
+  font-size: 1rem;
+  margin-left: 8rem;
+  border-radius: 0;
+}
+.btnsold:hover {
+  background-color: #d36d78;
+}
+.product-accordion {
+  margin: 15px 0 0;
+}
+.product-accordion .accordion {
+  margin: 0;
+  padding: 5px 0;
+  //   border-bottom: #cecece 1px solid;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-family: fugueregular;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+.product_info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-family: Avenir Medium;
+  color: #000;
+  font-size: 16px;
+  font-weight: 900;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 13px;
+}
+.product_info::after {
+  transform: rotate(180deg);
+  display: inline-block;
+  background-image: url(//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/chevron_down_alt.png?v=1615656…);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-bottom: -2px;
+  content: "";
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.product_info:active::after {
+  color: red;
+  transition: 0.9s;
+  transform: rotateY(200deg);
+}
+.accordion-content {
+  font-family: fugueregular;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888b8d;
+  padding: 20px 0;
+}
+.product_content {
+  font-family: Avenir Medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888b8d;
+  margin-left: 3rem;
+  font-weight: 600;
+}
+#stuffToShow {
+  display: none;
+}
+
+#checkbox {
+  opacity: 0.01;
+}
+#checkbox:checked + #stuffToShow {
+  display: block;
+}
+#stuffToShow2 {
+  display: none;
+}
+#checkbox2 {
+  opacity: 0.01;
+}
+#checkbox2:checked + #stuffToShow2 {
+  display: block;
+}
+#stuffToShow3 {
+  display: none;
+}
+#checkbox3 {
+  opacity: 0.01;
+}
+#checkbox3:checked + #stuffToShow3 {
+  display: block;
+}
+.DELIVERY_info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-family: Avenir Medium;
+  color: #000;
+  font-size: 16px;
+  font-weight: 900;
+  margin-left: 3rem;
+  margin-top: -1rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.DELIVERY_info::after {
+  transform: rotate(180deg);
+  display: inline-block;
+  background-image: url(//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/chevron_down_alt.png?v=1615656…);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-bottom: -2px;
+  content: "";
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.DELIVERY_header {
+  font-family: Avenir Medium;
+  font-size: 26px;
+  line-height: 24px;
+  color: #888b8d;
+  font-weight: 900;
+  margin-left: 3rem;
+}
+.callout.pink {
+  background-color: #fee;
+  margin-left: 3rem;
+  padding-top: 26px;
+  padding-left: 23px;
+  padding-bottom: 16px;
+  padding-right: 20px;
+  margin-bottom: 3rem;
+}
+.DELIVERY_content {
+  font-weight: 700;
+  font-family: Avenir Medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888b8d;
+}
+.DELIVERY_content_light {
+  font-family: Avenir Medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888b8d;
+}
+.RETURNS_info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-family: Avenir Medium;
+  color: #000;
+  font-size: 16px;
+  font-weight: 900;
+  margin-left: 3rem;
+  margin-top: -1rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.RETURNS_info::after {
+  transform: rotate(180deg);
+  display: inline-block;
+  background-image: url(//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/chevron_down_alt.png?v=1615656…);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-bottom: -2px;
+  content: "";
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.RETURNS_content {
+  color: #888b8d;
+  font-family: Avenir Medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888b8d;
+  margin-left: 3rem;
+}
+.emaillink {
+  color: #888b8d;
+}
+.question {
+  width: 100%;
+  font-family: Avenir Medium;
+  text-align: center;
+  font-size: 16px;
+  margin: -8px 0 10px;
+  display: inline-block;
+  margin-left: 6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.clickhelp {
+  color: black;
+  cursor: pointer;
+}
+.social_icon {
+  display: flex;
+  justify-content: center;
+  margin-left: 174px;
+}
+.aicon {
+  color: black;
+  cursor: pointer;
+  font-family: Avenir Medium;
+  text-decoration: none;
+}
+.related {
+  font-family: Avenir Medium;
+  font-size: 33px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-weight: 900;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.slide_content{
+    font-family: Avenir Medium;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    font-weight: revert;
+    text-align: center;
+    width: 100%;
+    // margin-bottom: 2rem;
+    margin-top: 14px;
+    cursor: pointer;
+}

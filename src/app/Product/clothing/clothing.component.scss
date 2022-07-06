@@ -1,0 +1,115 @@
+.clothing {
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin: 0;
+  font-family: Noe Display, sans-serif;
+  color: #000;
+  text-align: center;
+  font-weight: 900;
+}
+.clothing_contanier {
+  background-color: #ffeeee;
+  //   height: 19rem;
+  padding-top: 2rem;
+  margin-bottom: 50px;
+}
+.content_clothing {
+  font-size: 84%;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #000;
+  margin: 1rem auto 0;
+  max-width: 120ch;
+  font-family: Avenir Medium;
+  text-align: center;
+}
+.clothing_ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+.clothing_row {
+  background-color: #ebe9e9;
+  height: 3.4rem;
+  line-height: 4;
+}
+.cloth_li {
+  padding-left: 10px;
+  padding-right: 15px;
+  font-size: 13px;
+}
+.cloth_li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cloth_card {
+  width: 25rem;
+  border: 1px solid white;
+}
+.card-img-top {
+  border-radius: 0px;
+}
+.card-text {
+  font-family: Avenir Medium;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  line-height: 1.6em;
+  margin: 1rem 0 0.9rem;
+  font-weight: 400;
+  text-align: center;
+}
+.product-details {
+  position: relative;
+}
+
+.product_label {
+  position: absolute;
+  top: -13px;
+  width: 100%;
+  text-align: center;
+}
+.product-label-inner {
+  display: inline-block;
+  background-color: #fee;
+  color: #333;
+  padding: 7px 10px;
+  font-size: 75%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 0.7;
+  font-weight: 700;
+}
+.product-title {
+  font-family: Avenir Medium;
+  letter-spacing: 1px;
+  font-size: 13.5px;
+  line-height: 1.6em;
+  margin: 1rem 0 0.9rem;
+  font-weight: 400;
+  text-align: center;
+}
+.sortby {
+  border: 1px solid #ececec;
+  padding: 10px 7.5px;
+  font-family: Avenir Medium;
+  font-size: 0.6rem;
+  text-align: left;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  margin-bottom: 8.5px;
+  width: auto;
+  display: block;
+  width: 7.2rem;
+  margin-left: -7px;
+}
+.sort_option{
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+  font-size: 10px;
+  color: gray;
+  font-family: Avenir Medium;
+}
