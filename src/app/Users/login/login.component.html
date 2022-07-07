@@ -4,16 +4,20 @@
     <img src="assets/images/login.webp" style="margin-bottom: 50px;" />
     <div class="col-md-4"></div>
     <div class="col-md-4 login-form">
-      <h2 class="login">login</h2>
+      <h2 class="login" *ngIf="hideInput">login</h2>
+      <h2 class="resetpwd" *ngIf="!hideInput">Reset Your Password</h2>
+      <p *ngIf="!hideInput" class="resetpwd-content">We will send you an email to reset your password.</p>
       <form>
-        <input type="email" class="form-control" placeholder="Email" required/><br>
-        <input type="password" class="form-control" placeholder="Password" required/>
+        <input type="email" class="form-control" placeholder="Email" required /><br>
+        <input type="password" class="form-control" placeholder="Password" *ngIf="hideInput" required/>
         <p class="form-text">
-            <a class="forgot-pwd">Forgot your password?</a>
+            <a class="forgot-pwd" (click)="forgotpwd()" *ngIf="hideInput">Forgot your password?</a>
         </p>
-        <input type="submit" class="btn btnsignin" value="Login">
+        <input type="submit" class="btn btnsignin" value="Login" *ngIf="hideInput">
+        <input type="submit" class="btn btnsignin" value="Submit" *ngIf="!hideInput" (click) ="btncancel()">
+        <input type="submit" class="btn btnsignin" value="Cancel" *ngIf="!hideInput" (click) ="btncancel()">
         <p class="form-text-account">
-            <a routerLink="/signup" class="forgot-pwd">Create account</a>
+            <a routerLink="/signup" class="forgot-pwd" *ngIf="hideInput">Create account</a>
         </p>
       </form>
     </div>

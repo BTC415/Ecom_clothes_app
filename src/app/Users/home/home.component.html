@@ -110,7 +110,13 @@
 
 <div class="container-fluid">
   <div class="row">
-    <video src="assets/videos/video-1.mp4" autoplay loop controls [muted]="'muted'"></video>
+    <video
+      src="assets/videos/video-1.mp4"
+      autoplay
+      loop
+      controls
+      [muted]="'muted'"
+    ></video>
   </div>
 </div>
 
@@ -159,94 +165,20 @@
     <p class="trendingnow">Trending Now</p>
   </div>
 </div>
-
-<div class="container-fluid">
-  <div class="row" style="padding: 20px"></div>
-  <div class="col-12">
-    <ngb-carousel>
-      <ng-template ngbSlide>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 scrollrow">
-              <img src="assets/images/s-1.webp" height="591px" width="384px" />
-            </div>
-            <div class="col-sm-4 scrollrow">
-              <img src="assets/images/ss-2.webp" height="591px" width="384px" />
-            </div>
-            <div class="col-sm-4 scrollrow">
-              <img src="assets/images/s-3.webp" height="591px" width="384px" />
-            </div>
-          </div>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 scrollrow">
-              <img src="assets/images/s-4.webp" height="591px" width="384px" />
-            </div>
-            <div class="col-sm-4 scrollrow">
-              <img src="assets/images/s-5.webp" height="591px" width="384px" />
-            </div>
-            <div class="col-sm-4 scrollrow">
-              <img src="assets/images/s-6.webp" height="591px" width="384px" />
-            </div>
-          </div>
-        </div>
-      </ng-template>
-    </ngb-carousel>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row" style="padding: 20px"></div>
-  <div class="col-12">
-    <ngb-carousel>
-      <ng-template ngbSlide>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 desscrollrow">
-              <p class="descroll">
-                Cowl Neck One Shoulder Wrap Dress In Lavender
-              </p>
-              <p class="price">Rs. 8,950.00</p>
-            </div>
-            <div class="col-sm-4 desscrollrow">
-              <p class="descroll">Pleated Off Shoulder Midi Dress In Blue</p>
-              <p class="price">Rs. 9,950.00</p>
-            </div>
-            <div class="col-sm-4 desscrollrow">
-              <p class="descroll">
-                One Ruffle Sleeve Blazer Dress In Cornflower Blue
-              </p>
-              <p class="price">Rs. 10,990.00</p>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 desscrollrow">
-              <p class="descroll">
-                Asymmetric Ruffle Detail Midi Dress In White
-              </p>
-              <p class="price">Rs. 6,560.00</p>
-            </div>
-            <div class="col-sm-4 desscrollrow">
-              <p class="descroll">Bow Shoulder Asymmetric Dress In Yellow</p>
-              <p class="price">Rs. 9,531.00</p>
-            </div>
-            <div class="col-sm-4 desscrollrow">
-              <p class="descroll">Balloon Sleeve Mini Dress In Blue Floral</p>
-              <p class="price">Rs. 6,653.00</p>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-    </ngb-carousel>
-  </div>
-</div>
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let slide of trending_images">
+    <ng-template carouselSlide [id]="slide.id">
+      <img
+        [src]="slide.path"
+        style="cursor: pointer; padding: 16px"
+        height="500px"
+        width="0px"
+      />
+      <p class="slide_content">{{ slide.content }}</p>
+      <p class="slide_content">{{ slide.price }}</p>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
 
 <div class="container-fluid">
   <div class="row" style="height: 4rem"></div>

@@ -1,0 +1,62 @@
+.contact {
+  text-align: center;
+  font-size: 29px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.contact_content {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-family: Avenir Medium;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: #888b8d;
+  text-indent: 30px;
+}
+.contactform {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+input:focus,
+.input:active {
+  outline: none !important;
+  box-shadow: none;
+  border: 2px solid black;
+}
+input {
+  border: 2px solid #888b8d;
+  border-radius: 0;
+}
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #888b8d;
+  font-family: Avenir Medium;
+}
+::placeholder {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #888b8d;
+  font-family: Avenir Medium;
+}
+.btncontact {
+  width: 200px;
+  background: #000;
+  font-family: "fugueregular";
+  padding: 10px 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0;
+  margin-bottom: 25px;
+  margin-top: -1px;
+}

@@ -123,7 +123,7 @@
         <hr />
       </div>
       <p class="question">
-        Got a question? <a class="clickhelp">Click for help.</a>
+        Got a question? <a class="clickhelp" href="contact">Click for help.</a>
       </p>
       <div class="social_icon">
         <a
@@ -167,20 +167,19 @@
     <h5 class="related">related products</h5>
 
     <owl-carousel-o [options]="customOptions">
-
-        <ng-container *ngFor="let slide of related_images">
-          <ng-template carouselSlide [id]="slide.id">
-                <img [src]="slide.path" style="cursor: pointer;">
-                <p class="slide_content">{{slide.content}}</p>
-                <p class="slide_content">{{slide.price}}</p>
-          </ng-template>
-        </ng-container>
-    
-      </owl-carousel-o>
-
-
-    <!-- <carousel [images]="related_images"  [cellsToShow] = 5 style="height: 25rem;margin-bottom: 2rem;" class="related_images"> </carousel>
-    <carousel [images]="related_content"  [cellsToShow] = 5 style="height: 25rem;" class="related_images"> </carousel> -->
+      <ng-container *ngFor="let slide of related_images">
+        <ng-template carouselSlide [id]="slide.id">
+          <img
+            [src]="slide.path"
+            style="cursor: pointer; padding: 16px"
+            height="400px"
+            width="0px"
+          />
+          <p class="slide_content">{{ slide.content }}</p>
+          <p class="slide_content">{{ slide.price }}</p>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
   </div>
 </div>
 

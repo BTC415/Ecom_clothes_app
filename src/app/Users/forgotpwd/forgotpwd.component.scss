@@ -18,18 +18,49 @@
     padding: 25px 50px;
   }
   .login {
-    font-family: fugueregular;
-    margin: 10px;
+    font-family: 'fugueregular';
+    margin: 0;
     padding: 0;
     font-size: 39px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 21px;
+  }
+  .resetpwd{
+    font-family: 'Avenir Medium';
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
     letter-spacing: 1px;
     // text-transform: lowercase;
     text-align: center;
     font-weight: 900;
-    // margin-bottom: -33px;
+    margin-bottom: 21px;
+  }
+  .resetpwd-content{
+    font-family: 'Avenir Medium';
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    text-align: center;
+    margin-bottom: 21px;
   }
   input {
     border: 1px solid rgba(255, 255, 255, 0.8);
+    width: 100%;
+    background: #FFF;
+    border: 0;
+    margin: 1rem 0 0;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #777;
+    font-family: 'Avenir Medium';
   }
   input:focus,
   .searchinput:active {
@@ -37,19 +68,13 @@
     box-shadow: none;
     border: 2px solid black;
   }
-  ::placeholder {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #888b8d;
-    font-family: Avenir Medium;
-  }
   .form-text {
     text-align: right;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 1px;
     color: #777;
-    font-family: Avenir Medium;
+    font-family: 'Avenir Medium';
     margin-top: 10px;
   }
   .form-text-account{
@@ -58,18 +83,19 @@
       line-height: 18px;
       letter-spacing: 1px;
       color: #777;
-      font-family: Avenir Medium;
+      font-family: 'Avenir Medium';
       margin-top: 10px;
       cursor: pointer;
   }
   .forgot-pwd {
     color: #777;
     cursor: pointer;
+    font-family: 'Avenir Medium';
   }
   .btnsignin{
       width: 200px;
       background: #000;
-      font-family: fugueregular;
+      font-family: 'Avenir Medium';
       margin: 1rem 75px 0;
       padding: 10px 0;
       font-size: 1.2rem;
@@ -79,5 +105,11 @@
       color: #fff;
       font-weight: 600;
       border-radius: 0;
+  }
+  #contenttmenu{
+    display: block;
+    color: white;
+    background-color: red;
+    width: 10rem;
   }
   

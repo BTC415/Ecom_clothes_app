@@ -16,6 +16,12 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { OneProductComponent } from './Product/one-product/one-product.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ContactComponent } from './Social/contact/contact.component';
+import { CartComponent } from './Product/cart/cart.component';
+import { WishlistComponent } from './Product/wishlist/wishlist.component';
+import { ProfileComponent } from './Users/profile/profile.component';
+import { ForgotpwdComponent } from './Users/forgotpwd/forgotpwd.component';
+import { AboutComponent } from './Users/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +31,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HeaderComponent,
     FooterComponent,
     ClothingComponent,
-    OneProductComponent
+    OneProductComponent,
+    ContactComponent,
+    CartComponent,
+    WishlistComponent,
+    ProfileComponent,
+    ForgotpwdComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

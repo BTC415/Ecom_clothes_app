@@ -28,6 +28,27 @@
   font-weight: 900;
   margin-bottom: 21px;
 }
+.resetpwd{
+  font-family: 'Avenir Medium';
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 21px;
+}
+.resetpwd-content{
+  font-family: 'Avenir Medium';
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-align: center;
+  margin-bottom: 21px;
+}
 input {
   border: 1px solid rgba(255, 255, 255, 0.8);
   width: 100%;
@@ -74,7 +95,7 @@ input:focus,
 .btnsignin{
     width: 200px;
     background: #000;
-    font-family: 'fugueregular';
+    font-family: 'Avenir Medium';
     margin: 1rem 75px 0;
     padding: 10px 0;
     font-size: 1.2rem;

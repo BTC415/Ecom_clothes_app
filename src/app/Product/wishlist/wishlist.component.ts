@@ -1,43 +1,15 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'; 
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-wishlist',
+  templateUrl: './wishlist.component.html',
+  styleUrls: ['./wishlist.component.scss']
 })
-export class HomeComponent implements OnInit {
-  slideNo = 0;
-  withAnim = true;
-  resetAnim = true;
-
-  @ViewChild('myCarousel')
-  myCarousel!: NguCarousel<any>;
-  carouselConfig: NguCarouselConfig = {
-    grid: { xs: 1, sm: 1, md: 1, lg: 1, xl: 1, all: 0 },
-    slide: 1,
-    speed: 2000,
-    interval: { timing: 3000, initialDelay: 1000 },
-    load: 1,
-    loop: true,
-    touch: true,
-    velocity: 0.2,
-    vertical: {
-      enabled: true,
-      height: 600,
-    },
-  };
-  constructor(private _cdr: ChangeDetectorRef,config: NgbCarouselConfig) {
-    config.interval = 2000;  
-    config.wrap = true;  
-    config.keyboard = false;  
-    config.pauseOnHover = false;  
-  }
+export class WishlistComponent implements OnInit {
 
   customOptions: OwlOptions = {
     loop: true,
-    autoplay: true,
+    autoplay: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
@@ -60,7 +32,7 @@ export class HomeComponent implements OnInit {
     },
     nav: true
   }
-  trending_images:any[] = [
+  related_images:any[] = [
     {path:"https://cdn.shopify.com/s/files/1/2722/8634/products/LAVA220512_3_360x.jpg?v=1652430392",content : "High Waist Tapered Trouser In Spring Green",price:"Rs. 10,100.00"},
     {path:"https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_106683_360x.jpg?v=1653067583" ,content : "High Waist Tapered Trouser In Spring Green",price:"Rs. 10,100.00"},
     {path:"https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_112642_360x.jpg?v=1655711101" ,content : "High Waist Tapered Trouser In Spring Green",price:"Rs. 10,100.00"},
@@ -75,18 +47,9 @@ export class HomeComponent implements OnInit {
     {path:"https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_108080_360x.jpg?v=1647259059" ,content : "High Waist Tapered Trouser In Spring Green",price:"Rs. 10,100.00"},
   ]
 
-  ngOnInit(): void {}
-  ngAfterViewInit() {
-    this._cdr.detectChanges();
-  }
-  carouselItems: any[any] = [
-    'assets/images/home-1.webp',
-    'assets/images/home-2.webp',
-  ];
-  mainItems: any[] = [...this.carouselItems];
+  constructor() { }
 
-  carouselTileLoad(data: any) {
-    let arr = this.carouselItems;
-    this.carouselItems = [...this.carouselItems, ...this.mainItems];
+  ngOnInit(): void {
   }
+
 }

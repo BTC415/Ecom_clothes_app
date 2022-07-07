@@ -23,8 +23,8 @@ export class OneProductComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     navSpeed: 700,

@@ -1,0 +1,197 @@
+.shoppingbag {
+  font-family: Avenir Medium;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+  margin: 0;
+  padding: 0 0 15px;
+  margin-top: 32px;
+  margin-bottom: -13px;
+}
+.bag-empty {
+  font-family: Avenir Medium;
+  text-align: center;
+  margin-bottom: 62px;
+  margin-top: 12px;
+}
+  .pinkcard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 1.5em auto;
+    font-size: 85%;
+    background-color: #f8f8f8;
+    padding: 1em;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 0;
+  }
+  .sidepinkcard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 6em auto;
+    font-size: 85%;
+    background-color: #f8f8f8;
+    padding: 1em;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 0;
+  }
+  .card_image {
+    flex: 100px 0 0;
+    position: relative;
+    display: block;
+  }
+  .card-detail {
+    padding: 0 2vw;
+  }
+  .card-ptag {
+    color: #000;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: Avenir Medium;
+    font-size: 16px;
+  }
+  .oreder-summary {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0 0 15px;
+    margin: 20px 0 0;
+  }
+  .oreder-ptag {
+    color: #000;
+    cursor: pointer;
+    font-family: Avenir Medium;
+    font-size: 16px;
+  }
+  .btncheckout {
+    background: #000;
+    color: #fff;
+    border: 0;
+    width: 100%;
+    margin: 20px 0 0;
+    text-transform: lowercase;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-family: Avenir Medium;
+    border-radius: 0;
+  }
+  .btnaddcard{
+    background: #000;
+    color: #fff;
+    border: 0;
+    width: 100%;
+    margin: 20px 0 0;
+    text-transform: lowercase;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-family: Avenir Medium;
+    border-radius: 0;
+    height: 1px;
+    line-height: 0;
+    margin-top: -2px;
+  }
+  .accept {
+    width: 100%;
+    margin: 20px 0 10px;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: Avenir Medium;
+  }
+  .payment-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0 auto 10px;
+    padding: 0;
+    width: 230px;
+  }
+  .related-item {
+    width: 100%;
+    margin: -21px 34px 10px 32px;
+    padding: 0;
+    text-align: left;
+    font-size: 23px;
+    line-height: 1.5rem;
+    font-family: Avenir Medium;
+    font-weight: 800;
+    margin-bottom: 28px;
+  }
+  .slide_content {
+    font-family: Avenir Medium;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    font-weight: revert;
+    text-align: center;
+    width: 100%;
+    // margin-bottom: 2rem;
+    margin-top: 14px;
+    cursor: pointer;
+  }
+  .btnaddbag {
+    font-family: Avenir Medium;
+    background: #000;
+    color: #fff;
+    border: 0;
+    width: 92%;
+    margin: 0 auto;
+    text-transform: lowercase;
+    padding: 20px 0;
+    font-size: 1rem;
+    border-radius: 0;
+    height: 2px;
+    line-height: 2px;
+    margin-bottom: 1rem;
+    margin-left: 18px;
+  }
+  .btnaddbag:hover {
+    background-color: #d36d78;
+    cursor: pointer;
+  }
+  .product_select {
+    width: 92%;
+    padding: 10px;
+    border-color: #000;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+    margin-left: 18px;
+    height: 34px;
+    border: 1px solid white;
+    font-size: 13px;
+    padding: 8px;
+  }
+  select:focus {
+    border: 1px solid white;
+  }
+  .product_option {
+    color: #838383;
+    background-color: #fff;
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+  }
+  .shopping {
+    width: 100%;
+    margin: -21px 34px 10px 32px;
+    padding: 0;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.5rem;
+    font-family: Avenir Medium;
+    margin-top: 34px;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+    margin-bottom: 68px;
+  }

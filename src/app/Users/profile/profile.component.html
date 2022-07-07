@@ -1,0 +1,160 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <p class="account">my account</p>
+    <div class="col-md-3">
+      <div class="profilepinkcard">
+        <div class="card_image">
+          <img
+            src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SUMMER22_6449_medium.jpg?v=1656426740"
+            style="border-radius: 100px; height: 157px; width: 175px"
+          />
+        </div>
+        <hr />
+        <p class="profile_sidebar" (click)="personal_detail()">
+          Personal Detail
+        </p>
+        <hr />
+        <p class="profile_sidebar">Change Password</p>
+        <hr />
+        <p class="profile_sidebar" (click)="orders()">Orders</p>
+        <button class="btn btneditprofile" (click)="btnEditProfile()">
+          Edit Profile
+        </button>
+      </div>
+    </div>
+    <div class="col-md-9" *ngIf="profile">
+      <div class="profilepinkcard">
+        <div style="display: flex">
+          <p class="profile_detail">First Name :</p>
+          <span style="margin-left: 116px">Pratiksha</span>
+        </div>
+        <hr />
+        <div style="display: flex">
+          <p class="profile_detail">Last Name:</p>
+          <span style="margin-left: 120px">Sheliya</span>
+        </div>
+        <hr />
+        <div style="display: flex">
+          <p class="profile_detail">Email :</p>
+          <span style="margin-left: 150px">Pratiksha@gmail.com</span>
+        </div>
+        <hr />
+        <div style="display: flex">
+          <p class="profile_detail">City :</p>
+          <span style="margin-left: 160px">Surat</span>
+        </div>
+        <hr />
+        <div style="display: flex">
+          <p class="profile_detail">Phone Number :</p>
+          <span style="margin-left: 70px">1234567890</span>
+        </div>
+        <hr />
+        <div style="display: flex">
+          <p class="profile_detail">Address :</p>
+          <span style="margin-left: 120px">Surat</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9" *ngIf="profileform">
+      <div class="profilepinkcard">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <span>First Name</span
+              ><input
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <span>Last Name</span
+              ><input
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                required
+              /><br />
+            </div>
+          </div>
+          <br />
+
+          <div class="row">
+            <div class="col-md-6">
+              <span>Email</span>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                required
+              /><br />
+            </div>
+            <div class="col-md-6">
+              <span>City</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City"
+                required
+              /><br />
+            </div>
+          </div>
+          <br />
+
+          <div class="row">
+            <div class="col-md-6">
+              <span>Phone Number</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Phone Number"
+                required
+              /><br />
+            </div>
+            <div class="col-md-6">
+              <span>Address</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Address"
+                required
+              /><br />
+            </div>
+          </div>
+          <br />
+
+          <span>Profile Image</span
+          ><input
+            type="file"
+            class="form-control"
+            placeholder="Image"
+            required
+          /><br />
+          <button class="btn btnsubmit" (click)="btnSubmit()">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-9" *ngIf="order">
+      <div class="profilepinkcard">
+        <div class="pinkcard">
+          <div class="card_image">
+            <img
+              src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SUMMER22_6449_medium.jpg?v=1656426740"
+              height="145px"
+            />
+          </div>
+          <div class="card-detail">
+            <p class="card-ptag">Ponte Button Detail Cut Out Wrap Dress In White</p>
+            <p class="card-ptag" style="text-decoration: none">
+              UK6 / US2 / EU34
+            </p>
+            <p class="card-ptag" style="text-decoration: none">Rs. 13,000.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

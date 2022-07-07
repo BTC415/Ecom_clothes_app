@@ -190,6 +190,7 @@
 }
 .trending {
   height: 5rem;
+  margin-bottom: 31px;
 }
 .trendingnow {
   font-family: fugueregular, sans-serif;
@@ -201,6 +202,7 @@
   text-align: center;
   font-weight: 700;
   line-height: 4;
+  margin-bottom: 5px;
 }
 
 .scrollrow {
@@ -209,7 +211,18 @@
   width: 25rem;
   // height: 34rem;
 }
-
+.slide_content{
+  font-family: Avenir Medium;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-weight: revert;
+  text-align: center;
+  width: 100%;
+  // margin-bottom: 2rem;
+  margin-top: 14px;
+  cursor: pointer;
+}
 .descroll {
   font-family: fugueregular;
   letter-spacing: 1px;
