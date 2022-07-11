@@ -19,8 +19,10 @@
           <p class="card-ptag" style="text-decoration: none">
             UK6 / US2 / EU34
           </p>
-          <p class="card-ptag" style="text-decoration: none">Rs. 13,000.00</p>
-          <a href="" class="card-ptag"><p>Remove</p></a>
+          <div style="text-align: end; display: flex">
+            <a href="" class="card-ptag"><p>Remove</p></a>
+            <p class="card-ptag" style="text-decoration: none;margin-left: 19rem;">Rs. 13,000.00</p>
+          </div>
         </div>
       </div>
       <a href="/clothing"><p class="shopping">Continue Shopping</p></a>
@@ -93,7 +95,7 @@
           <img
             [src]="slide.path"
             style="cursor: pointer; padding: 16px"
-            height="450px"
+            height="400px"
             width="0px"
           />
           <p class="slide_content">{{ slide.content }}</p>
@@ -118,10 +120,13 @@
 <!-- bag is currently empty. -->
 <div class="container">
   <div class="row">
-    <p class="shoppingbag" style="margin-bottom: 2px;">Shopping Bag</p>
-    <hr>
+    <p class="shoppingbag" style="margin-bottom: 2px">Shopping Bag</p>
+    <hr />
     <p class="bag-empty">Your bag is currently empty.</p>
-    <p class="bag-empty">Check your <a href="" style="color: black;">wishlist</a> or <a href="/clothing" style="color: black;">Continue Shopping</a></p>
+    <p class="bag-empty">
+      Check your <a href="" style="color: black">wishlist</a> or
+      <a href="/clothing" style="color: black">Continue Shopping</a>
+    </p>
   </div>
 </div>
 <app-footer></app-footer>

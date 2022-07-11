@@ -1,23 +1,74 @@
 <app-header></app-header>
 <div class="container-fluid">
   <div class="row">
-    <img src="assets/images/login.webp" style="margin-bottom: 50px;" />
+    <img src="assets/images/login.webp" style="margin-bottom: 50px" />
     <div class="col-md-4"></div>
     <div class="col-md-4 login-form">
       <h2 class="login" *ngIf="hideInput">login</h2>
       <h2 class="resetpwd" *ngIf="!hideInput">Reset Your Password</h2>
-      <p *ngIf="!hideInput" class="resetpwd-content">We will send you an email to reset your password.</p>
-      <form>
-        <input type="email" class="form-control" placeholder="Email" required /><br>
-        <input type="password" class="form-control" placeholder="Password" *ngIf="hideInput" required/>
+      <p *ngIf="!hideInput" class="resetpwd-content">
+        We will send you an email to reset your password.
+      </p>
+      <form [formGroup]="loginForm">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+          required
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">Email is required</div>
+          <div *ngIf="f['email'].errors['email']">
+            Email must be a valid email address
+          </div>
+        </div>
+        <br />
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          *ngIf="hideInput"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+          required
+        />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">
+            Password is required
+          </div>
+        </div>
         <p class="form-text">
-            <a class="forgot-pwd" (click)="forgotpwd()" *ngIf="hideInput">Forgot your password?</a>
+          <a class="forgot-pwd" (click)="forgotpwd()" *ngIf="hideInput"
+            >Forgot your password?</a
+          >
         </p>
-        <input type="submit" class="btn btnsignin" value="Login" *ngIf="hideInput">
-        <input type="submit" class="btn btnsignin" value="Submit" *ngIf="!hideInput" (click) ="btncancel()">
-        <input type="submit" class="btn btnsignin" value="Cancel" *ngIf="!hideInput" (click) ="btncancel()">
+        <input
+          type="submit"
+          class="btn btnsignin"
+          value="Login"
+          *ngIf="hideInput"
+          (click)="btnlogin()"
+        />
+        <input
+          type="submit"
+          class="btn btnsignin"
+          value="Submit"
+          *ngIf="!hideInput"
+          (click)="btncancel()"
+        />
+        <input
+          type="submit"
+          class="btn btnsignin"
+          value="Cancel"
+          *ngIf="!hideInput"
+          (click)="btncancel()"
+        />
         <p class="form-text-account">
-            <a routerLink="/signup" class="forgot-pwd" *ngIf="hideInput">Create account</a>
+          <a routerLink="/signup" class="forgot-pwd" *ngIf="hideInput"
+            >Create account</a
+          >
         </p>
       </form>
     </div>

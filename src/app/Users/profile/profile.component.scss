@@ -108,6 +108,7 @@ button:hover {
   line-height: 0;
   width: 9rem;
   margin-left: 3rem;
+  margin-top: -13px;
 }
 .pinkcard {
   display: flex;
@@ -127,14 +128,36 @@ button:hover {
   font-family: Avenir Medium;
   font-size: 16px;
 }
-::placeholder{
-    font-family: Avenir Medium;
-    font-weight: 500;
-    text-align: left;
-    font-size: 17px;
-    line-height: 1.7rem;
-    margin: 0;
-    padding: 0 0 15px;
-    margin-top: 16px;
-    margin-left: 3rem;
+::placeholder {
+  font-family: Avenir Medium;
+  font-weight: 500;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.7rem;
+  margin: 0;
+  padding: 0 0 15px;
+  margin-top: 16px;
+  margin-left: 3rem;
+}
+.image-upload > input {
+  display: none;
+}
+.editimage {
+  font-family: Avenir Medium;
+  font-size: 14px;
+  font-weight: 500;
+}
+.fa-user {
+  margin-left: 11rem;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+.labeledit {
+  display: flex;
+  margin-top: 17px;
+  margin-bottom: -22px;
+  cursor: pointer;
+}
+.labeledit:hover{
+  text-decoration: underline;
 }

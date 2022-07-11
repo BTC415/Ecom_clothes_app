@@ -9,32 +9,78 @@
     <div class="col-md-4"></div>
     <div class="col-md-4 login-form">
       <h2 class="login">Create Account</h2>
-      <form>
+      <form [formGroup]="FormSignUp">
         <input
           type="text"
           class="form-control"
           placeholder="First Name"
+          formControlName="firstname"
+          [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }"
           required
-        /><br />
+        />
+        <div
+          *ngIf="submitted && f['firstname'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f['firstname'].errors['required']">
+            First name is required
+          </div>
+        </div>
+        <br />
         <input
           type="text"
           class="form-control"
           placeholder="Last Name"
+          formControlName="lastname"
+          [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
           required
-        /><br />
+        />
+        <div
+          *ngIf="submitted && f['lastname'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f['lastname'].errors['required']">
+            Last Name is required
+          </div>
+        </div>
+        <br />
         <input
           type="email"
           class="form-control"
           placeholder="Email"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
           required
-        /><br />
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">Email is required</div>
+          <div *ngIf="f['email'].errors['email']">
+            Email must be a valid email address
+          </div>
+        </div>
+        <br />
         <input
           type="password"
           class="form-control"
           placeholder="Password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
           required
         />
-        <input type="submit" class="btn btnsignin" value="Create Account" />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">
+            Password is required
+          </div>
+          <div *ngIf="f['password'].errors['pattern']">
+            Use at least 7 characters. Use a mix of letters (uppercase and lowercase), numbers,special characters and symbols.
+          </div>
+        </div>
+        <input
+          type="submit"
+          class="btn btnsignin"
+          value="Create Account"
+          (click)="btnSignUp()"
+        />
         <p class="form-text-account">
           <a href="login" class="forgot-pwd">Login Now</a>
         </p>

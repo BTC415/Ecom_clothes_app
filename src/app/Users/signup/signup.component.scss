@@ -7,7 +7,8 @@
 // }
 .login-form {
     position: absolute;
-    top: -9px;
+    // top: -9px;
+    top: -75px;
     left: 50%;
     margin: 352px 0 0 -225px;
     z-index: 100;
@@ -80,4 +81,6 @@
       font-weight: 600;
       border-radius: 0;
   }
-  
+  .invalid-feedback{
+    font-family: Avenir Medium;
+  }

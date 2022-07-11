@@ -143,5 +143,50 @@
     </div>
   </div>
 </div>
+<ng-template #content let-modal class="supportmodel">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Leave us a message</h4>
+    <button
+      type="button"
+      class="btn close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true" class="close"> × </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <!-- <div class="form-group"> -->
+      <!-- <div class="input-group"> -->
+      <label>Name</label>
+      <input class="form-control suppotinput" name="name" />
+      <label>Email</label>
+      <input class="form-control suppotinput" name="email" />
+      <label>How can we help you?</label>
+      <textarea class="form-control suppotinput" rows="4" cols="50"></textarea>
+      <label>Attachments</label>
+      <div class="btn btnfile"><input type="file" class="inputfile" /></div>
+      <!-- </div> -->
+      <!-- </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btnmodelsave"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+<div class="container-fluid">
+  <div class="row" style="height: 4rem">
+    <button class="myBtn" title="Go to top" (click)="open(content)">
+      <i class="fa fa-question-circle" aria-hidden="true"></i>Support
+    </button>
+  </div>
+</div>
 
 <app-footer></app-footer>

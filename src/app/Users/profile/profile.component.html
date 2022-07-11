@@ -10,12 +10,23 @@
             style="border-radius: 100px; height: 157px; width: 175px"
           />
         </div>
+        <div class="image-upload">
+          <label for="file-input" class="labeledit" style="display: flex">
+            <i class="fa fa-user" aria-hidden="true" ></i>
+            <p class="editimage">Edit Image</p>
+          </label>
+          <input id="file-input" type="file" />
+        </div>
         <hr />
         <p class="profile_sidebar" (click)="personal_detail()">
           Personal Detail
         </p>
         <hr />
-        <p class="profile_sidebar">Change Password</p>
+        <p class="profile_sidebar">
+          <a href="forgotpassword" style="color: black; text-decoration: none"
+            >Change Password</a
+          >
+        </p>
         <hr />
         <p class="profile_sidebar" (click)="orders()">Orders</p>
         <button class="btn btneditprofile" (click)="btnEditProfile()">
@@ -41,18 +52,19 @@
         </div>
         <hr />
         <div style="display: flex">
-          <p class="profile_detail">City :</p>
-          <span style="margin-left: 160px">Surat</span>
-        </div>
-        <hr />
-        <div style="display: flex">
           <p class="profile_detail">Phone Number :</p>
           <span style="margin-left: 70px">1234567890</span>
         </div>
+
         <hr />
         <div style="display: flex">
           <p class="profile_detail">Address :</p>
           <span style="margin-left: 120px">Surat</span>
+        </div>
+        <hr />
+        <div style="display: flex">
+          <p class="profile_detail">City :</p>
+          <span style="margin-left: 160px">Surat</span>
         </div>
       </div>
     </div>
@@ -125,13 +137,14 @@
           </div>
           <br />
 
-          <span>Profile Image</span
+          <!-- <span>Profile Image</span
           ><input
             type="file"
             class="form-control"
             placeholder="Image"
             required
-          /><br />
+          /> -->
+          <!-- <br /> -->
           <button class="btn btnsubmit" (click)="btnSubmit()">Submit</button>
         </form>
       </div>
@@ -146,7 +159,9 @@
             />
           </div>
           <div class="card-detail">
-            <p class="card-ptag">Ponte Button Detail Cut Out Wrap Dress In White</p>
+            <p class="card-ptag">
+              Ponte Button Detail Cut Out Wrap Dress In White
+            </p>
             <p class="card-ptag" style="text-decoration: none">
               UK6 / US2 / EU34
             </p>

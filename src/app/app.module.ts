@@ -22,6 +22,11 @@ import { WishlistComponent } from './Product/wishlist/wishlist.component';
 import { ProfileComponent } from './Users/profile/profile.component';
 import { ForgotpwdComponent } from './Users/forgotpwd/forgotpwd.component';
 import { AboutComponent } from './Users/about/about.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +52,10 @@ import { AboutComponent } from './Users/about/about.component';
     BrowserAnimationsModule,
     NgxGalleryModule,
     IvyCarouselModule,
-    CarouselModule
+    CarouselModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

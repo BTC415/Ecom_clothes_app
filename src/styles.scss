@@ -5,6 +5,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css"; // your theme
 @import 'node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import '~ngx-toastr/toastr';
 .mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
     transform: none !important;
 }

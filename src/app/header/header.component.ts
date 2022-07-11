@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   scroll = (event: any): void => {
     var top = (window.pageYOffset || document.documentElement.scrollTop)  - (document.documentElement.clientTop || 0);
     this.isSticky = top > 100 ? true : false
-    console.log('#######', top, this.isSticky)
+    // console.log('#######', top, this.isSticky)
   };
 
 }

@@ -33,6 +33,7 @@
     "ngx-gallery": "^5.10.0",
     "ngx-owl-carousel-o": "^7.0.3",
     "ngx-swiper-wrapper": "^10.0.0",
+    "ngx-toastr": "^14.3.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
