@@ -4,7 +4,7 @@
     <img src="assets/images/login.webp" style="margin-bottom: 50px" />
     <div class="col-md-4"></div>
     <div class="col-md-4 login-form">
-      <h2 class="login" *ngIf="hideInput">login</h2>
+      <h2 class="login" *ngIf="hideInput">Login</h2>
       <h2 class="resetpwd" *ngIf="!hideInput">Reset Your Password</h2>
       <p *ngIf="!hideInput" class="resetpwd-content">
         We will send you an email to reset your password.
@@ -51,20 +51,22 @@
           *ngIf="hideInput"
           (click)="btnlogin()"
         />
-        <input
-          type="submit"
-          class="btn btnsignin"
-          value="Submit"
-          *ngIf="!hideInput"
-          (click)="btncancel()"
-        />
-        <input
-          type="submit"
-          class="btn btnsignin"
-          value="Cancel"
-          *ngIf="!hideInput"
-          (click)="btncancel()"
-        />
+        <div style="display: flex;justify-content: center;">
+          <input
+            type="submit"
+            class="btn btncancel"
+            value="Submit"
+            *ngIf="!hideInput"
+            (click)="btnsendmail()"
+          />
+          <input
+            type="submit"
+            class="btn btncancel"
+            value="Cancel"
+            *ngIf="!hideInput"
+            (click)="btncancel()"
+          />
+        </div>
         <p class="form-text-account">
           <a routerLink="/signup" class="forgot-pwd" *ngIf="hideInput"
             >Create account</a

@@ -6,81 +6,93 @@
 //   height: 100%;
 // }
 .login-form {
-    position: absolute;
-    // top: -9px;
-    top: -75px;
-    left: 50%;
-    margin: 352px 0 0 -225px;
-    z-index: 100;
-    width: 450px;
-    display: inline-block;
-    vertical-align: top;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 25px 50px;
-  }
-  .login {
-    font-family: fugueregular;
-    margin: 10px;
-    padding: 0;
-    font-size: 39px;
-    letter-spacing: 1px;
-    // text-transform: lowercase;
-    text-align: center;
-    font-weight: 900;
-    // margin-bottom: -33px;
-  }
-  input {
-    border: 1px solid rgba(255, 255, 255, 0.8);
-  }
-  input:focus,
-  .searchinput:active {
-    outline: none !important;
-    box-shadow: none;
-    border: 2px solid black;
-  }
-  ::placeholder {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #888b8d;
-    font-family: Avenir Medium;
-  }
-  .form-text {
-    text-align: right;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 1px;
-    color: #777;
-    font-family: Avenir Medium;
-    margin-top: 10px;
-  }
-  .form-text-account{
-      text-align: center;
-      font-size: 14px;
-      line-height: 18px;
-      letter-spacing: 1px;
-      color: #777;
-      font-family: Avenir Medium;
-      margin-top: 10px;
-      cursor: pointer;
-  }
-  .forgot-pwd {
-    color: #777;
-    cursor: pointer;
-  }
-  .btnsignin{
-      width: 200px;
-      background: #000;
-      font-family: fugueregular;
-      margin: 1rem 75px 0;
-      padding: 10px 0;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      text-transform: lowercase;
-      text-align: center;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 0;
-  }
-  .invalid-feedback{
-    font-family: Avenir Medium;
-  }
+  position: absolute;
+  // top: -9px;
+  top: -75px;
+  left: 50%;
+  margin: 352px 0 0 -225px;
+  z-index: 100;
+  width: 450px;
+  display: inline-block;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px 50px;
+}
+.login {
+  font-family: fugueregular;
+  margin: 10px;
+  padding: 0;
+  font-size: 39px;
+  letter-spacing: 1px;
+  // text-transform: lowercase;
+  text-align: center;
+  font-weight: 900;
+  // margin-bottom: -33px;
+}
+input {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+input:focus,
+.searchinput:active {
+  outline: none !important;
+  box-shadow: none;
+  border: 2px solid black;
+}
+::placeholder {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #888b8d;
+  font-family: Avenir Medium;
+}
+.form-text {
+  text-align: right;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #777;
+  font-family: Avenir Medium;
+  margin-top: 10px;
+}
+.form-text-account {
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #777;
+  font-family: Avenir Medium;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.forgot-pwd {
+  color: #777;
+  cursor: pointer;
+}
+.btnsignin {
+  width: 200px;
+  background: #000;
+  font-family: fugueregular;
+  margin: 1rem 75px 0;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0;
+}
+.invalid-feedback {
+  font-family: Avenir Medium;
+}
+input[type="text"] {
+  color: black;
+  font-family: Avenir Medium;
+}
+input[type="email"] {
+  color: black;
+  font-family: Avenir Medium;
+}
+input[type="password"] {
+  color: black;
+  font-family: Avenir Medium;
+}

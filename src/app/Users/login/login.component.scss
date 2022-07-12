@@ -23,7 +23,6 @@
   padding: 0;
   font-size: 39px;
   letter-spacing: 1px;
-  text-transform: lowercase;
   text-align: center;
   font-weight: 900;
   margin-bottom: 21px;
@@ -34,7 +33,6 @@
   padding: 0;
   font-size: 30px;
   letter-spacing: 1px;
-  text-transform: lowercase;
   text-align: center;
   font-weight: 900;
   margin-bottom: 21px;
@@ -45,7 +43,6 @@
   padding: 0;
   font-size: 15px;
   letter-spacing: 1px;
-  text-transform: lowercase;
   text-align: center;
   margin-bottom: 21px;
 }
@@ -101,7 +98,6 @@ input:focus,
   padding: 10px 0;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  text-transform: lowercase;
   text-align: center;
   color: #fff;
   font-weight: 600;
@@ -117,4 +113,24 @@ input:focus,
   font-family: Avenir Medium;
   margin-left: 5px;
   margin-bottom: -18px;
+}
+input[type="text"] {
+  color: black;
+  font-family: Avenir Medium;
+}
+input[type="email"] {
+  color: black;
+  font-family: Avenir Medium;
+}
+input[type="password"] {
+  color: black;
+  font-family: Avenir Medium;
+}
+.btncancel {
+  background: black;
+  width: 14rem;
+  margin-top: -33px;
+  margin-bottom: 34px;
+  color: white;
+  margin-left: 5px;
 }

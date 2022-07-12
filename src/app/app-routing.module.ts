@@ -4,6 +4,7 @@ import { CartComponent } from './Product/cart/cart.component';
 import { ClothingComponent } from './Product/clothing/clothing.component';
 import { OneProductComponent } from './Product/one-product/one-product.component';
 import { WishlistComponent } from './Product/wishlist/wishlist.component';
+import { LoginauthGuard } from './services/loginauth.guard';
 import { ContactComponent } from './Social/contact/contact.component';
 import { AboutComponent } from './Users/about/about.component';
 import { ForgotpwdComponent } from './Users/forgotpwd/forgotpwd.component';
@@ -14,9 +15,9 @@ import { SignupComponent } from './Users/signup/signup.component';
 
 const routes: Routes = [
   {path:'' , redirectTo:'login' , pathMatch:'full'},
-  {path:'login' , component:LoginComponent},
-  {path:'signup' , component:SignupComponent},
-  {path:'home' , component:HomeComponent},
+  {path:'login' , component:LoginComponent,canActivate: [LoginauthGuard]},
+  {path:'signup' , component:SignupComponent,canActivate: [LoginauthGuard]},
+  {path:'home' , component:HomeComponent,  },
   {path:'clothing' , component:ClothingComponent},
   {path:'product' , component:OneProductComponent},
   {path:'contact' , component:ContactComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'profile' , component:ProfileComponent},
   {path:'forgotpassword' , component:ForgotpwdComponent},
   {path:'about' , component:AboutComponent},
+  {path:'**' , component:LoginComponent},
 ];
 
 @NgModule({

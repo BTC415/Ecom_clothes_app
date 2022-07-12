@@ -23,9 +23,8 @@
 }
 .searchinput {
   border: 0;
-  font-family: fugueregular;
+  font-family: "Avenir Medium";
   font-size: 17.9px;
-  text-transform: lowercase;
   margin: 0 0 0 2.5%;
   font-weight: 400;
   letter-spacing: 1px;
@@ -72,19 +71,18 @@ input:hover {
 li {
   list-style: none;
   margin-top: 13px;
-  font-family: fugueregular;
+  font-family: "Avenir Medium";
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 1px;
 }
 .nav_item {
-  font-family: "fugueregular";
-  font-size: 18px;
+  font-family: "Avenir Medium";
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 400;
-  text-transform: lowercase;
   padding: 20px 25px 30px;
-  font-weight: bold;
+  // font-weight: bold;
   cursor: pointer;
   color: black;
   text-decoration: none;
@@ -94,12 +92,13 @@ li {
   height: 3rem;
   padding-bottom: 5px;
   line-height: 1.2;
+  margin-top: 6px;
 }
 .free {
   color: #000000;
   text-align: center;
   text-transform: none;
-  font-family: "fugueregular";
+  font-family: "Avenir Medium";
   font-size: 12px;
   letter-spacing: 2px;
   padding: 2px;
@@ -113,24 +112,22 @@ li {
   justify-content: center;
 }
 .navitem {
-  font-family: "fugueregular";
+  font-family: "Avenir Medium";
   font-size: 18px;
   letter-spacing: 1px;
   font-weight: 400;
-  text-transform: lowercase;
   padding: 20px 25px 30px;
   font-weight: bold;
   // cursor: pointer;
   // margin-left: 56px
 }
 .nav-link {
-  font-family: "fugueregular";
-  font-size: 18px;
+  font-family: "Avenir Medium";
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 400;
-  text-transform: lowercase;
   padding: 20px 25px 30px;
-  font-weight: bold;
+  // font-weight: bold;
   cursor: pointer;
   margin-top: -18px;
   margin-bottom: -27px;
@@ -265,4 +262,11 @@ li {
 .awish{
   color: black;
   text-decoration: none;
+}
+.headername{
+  font-family: "Avenir Medium";
+  font-size: 1.2rem;
+  color: black;
+  border-radius: 0;
+  margin-left: -2rem;
 }

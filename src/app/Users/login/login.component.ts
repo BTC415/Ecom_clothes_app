@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private api: ApiService,
     private toastr: ToastrService,
-    private router : Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
           ),
         ],
       ],
+      role: ['user'],
     });
   }
   get f() {
@@ -45,17 +46,33 @@ export class LoginComponent implements OnInit {
           timeOut: 2000,
         });
         localStorage.setItem('token', res.token);
-        this.router.navigate(['home'])
+        this.router.navigate(['home']);
       },
       error: (error) => {
-        console.log('error.error.msg', error.error.msg);
-        console.log('error', error);
-
-        this.toastr.success(error.error.msg, '', {
+        this.toastr.error(error.error.msg, '', {
           timeOut: 2000,
         });
       },
     });
+  }
+  btnsendmail(){
+    // this.submitted = true;
+    console.log("this.loginForm.value.email====>",this.loginForm.value.email)
+    this.api.SendEmail(this.loginForm.value.email).subscribe({
+      next:(res)=>{
+        console.log("res",res);
+        this.toastr.success('Email send successfully , please check your Email', '', {
+          timeOut: 2000,
+        });
+        this.loginForm.reset();
+      },
+      error:(error)=>{
+        console.log("error",error)
+        this.toastr.error(error.error.msg, '', {
+          timeOut: 2000,
+        });
+      }
+    })
   }
   forgotpwd() {
     this.hideInput = false;
