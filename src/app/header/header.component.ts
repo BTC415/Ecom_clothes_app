@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   changeText: boolean;
   firstName: any;
   lastName: any;
+  // clothing_item: any;
   constructor(private router: Router, private api: ApiService) {
     this.changeText = false;
   }
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     window.addEventListener('scroll', this.scroll); //third parameter
     this.HeaderName();
+    // this.getClothingItem();
   }
 
   ngOnDestroy() {
@@ -46,6 +48,23 @@ export class HeaderComponent implements OnInit {
       error: (error) => {
         console.log('error', error);
       },
+    });
+  }
+
+  btnCategory(cat_product: any) {
+    this.router.navigate(['clothing'], {
+      queryParams: { category: cat_product },
+    });
+  }
+
+  btnCollection(collection: any) {
+    this.router.navigate(['clothing'], {
+      queryParams: { collection: collection },
+    });
+  }
+  btnNewIn(newin: any) {
+    this.router.navigate(['clothing'], {
+      queryParams: { newin: newin },
     });
   }
 }

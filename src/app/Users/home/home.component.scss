@@ -215,7 +215,6 @@
   font-family: Avenir Medium;
   font-size: 14px;
   letter-spacing: 1px;
-  text-transform: lowercase;
   font-weight: revert;
   text-align: center;
   width: 100%;
@@ -382,7 +381,17 @@ label {
 .supportmodel{
   margin-top: 20rem;
 }
-.modal-dialog {
-  transform: none;
-  margin-top: 15rem;
+
+::ng-deep .modal-dialog {
+  @media (min-width: 576px)
+  {
+    margin: 8em auto !important;
+  }
 }
+
+// @media (min-width: 576px)
+// {
+//     .modal-dialog {
+//       margin: 8em auto !important;
+//     }
+// }

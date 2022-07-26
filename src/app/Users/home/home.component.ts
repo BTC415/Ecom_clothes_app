@@ -3,6 +3,9 @@ import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { environment } from "../../../environments/environment";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,6 +16,8 @@ export class HomeComponent implements OnInit {
   withAnim = true;
   resetAnim = true;
   closeResult = '';
+  products: any;
+  env = environment
 
   @ViewChild('myCarousel')
   myCarousel!: NguCarousel<any>;
@@ -33,7 +38,9 @@ export class HomeComponent implements OnInit {
   constructor(
     private _cdr: ChangeDetectorRef,
     config: NgbCarouselConfig,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router,
+    private api: ApiService
   ) {
     config.interval = 2000;
     config.wrap = true;
@@ -132,7 +139,9 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllProducts();
+  }
   ngAfterViewInit() {
     this._cdr.detectChanges();
   }
@@ -147,6 +156,29 @@ export class HomeComponent implements OnInit {
     this.carouselItems = [...this.carouselItems, ...this.mainItems];
   }
 
+  //get all product
+  getAllProducts() {
+    this.api.getProducts().subscribe({
+      next: (res) => {
+        // console.log('res', res.data);
+        this.products = res.data
+      },
+      error: (error) => {
+        console.log('error', error);
+      },
+    });
+  }
+
+  btnHomepage(newin: any) {
+    this.router.navigate(['clothing'], { queryParams: { newin: newin } });
+  }
+  btnweddingpage(category: any) {
+    this.router.navigate(['clothing'], { queryParams: { category: category } });
+  }
+
+  btnOneProduct(_id:any){
+    this.router.navigate(['product/',_id])
+  }
   //open support dialog
   open(content: any) {
     this.modalService

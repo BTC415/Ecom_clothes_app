@@ -5,23 +5,23 @@
       <div class="col-md-6">
         <p class="shoppingbag">My Wishlist</p>
         <hr />
-        <div class="pinkcard">
+        <div class="pinkcard"  *ngFor="let product of products">
           <div class="card_image">
             <img
-              src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SUMMER22_6449_medium.jpg?v=1656426740"
+            [src]="env.apiUrl + 'product_images/' + product.images[0].name"
               height="145px"
             />
           </div>
           <div class="card-detail">
-            <a href="" class="card-ptag"
-              ><p>Ponte Button Detail Cut Out Wrap Dress In White</p></a
+            <a (click)="btnProductName(product._id)" class="card-ptag"
+              ><p>{{product.name}}</p></a
             >
             <p class="card-ptag" style="text-decoration: none">
-              UK6 / US2 / EU34
+              {{product.size}}
             </p>
-            <p class="card-ptag" style="text-decoration: none">Rs. 13,000.00</p>
-            <a href="" class="card-ptag"><p>Remove</p></a>
-            <button class="btn btnaddcard">Add to Cart</button>
+            <p class="card-ptag" style="text-decoration: none">{{product.price | currency: "INR" : "Rs."}}</p>
+            <a class="card-ptag" (click)="btnDelete(product._id)"><p>Remove</p></a>
+            <button class="btn btnaddcard" (click)="btnCart(product._id)">Add to Cart</button>
           </div>
         </div>
         <a href="/clothing"><p class="shopping">Continue Shopping</p></a>
@@ -34,52 +34,7 @@
             <hr style="width: 354px; margin-top: 1px" />
             <p class="oreder-ptag">Checkout currency: INR ₹</p>
             <p class="oreder-ptag">Your items total</p>
-            <p class="oreder-ptag">Rs. 13,000.00 INR</p>
-            <!-- <p class="oreder-ptag">Delivery calculated at the next step</p>
-            <button class="btn btncheckout">proceed to checkout →</button>
-            <p class="accept">We accept:</p>
-            <ul class="payment-icons">
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/amazon-92e856f82cae5a564cd0f70457f11af4d58fa037cf6e5ab7adf76f6fd3b9cafe.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/american_express-2264c9b8b57b23b0b0831827e90cd7bcda2836adc42a912ebedf545dead35b20.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/apple_pay-f6db0077dc7c325b436ecbdcf254239100b35b70b1663bc7523d7c424901fa09.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/maestro-d2055c6b416c46cf134f393e1df6e0ba31722b623870f954afd392092207889c.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/master-173035bc8124581983d4efa50cf8626e8553c2b311353fbf67485f9c1a2b88d1.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="//cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/paypal-49e4c1e03244b6d2de0d270ca0d22dd15da6e92cc7266e93eb43762df5aa355d.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/visa-319d545c6fd255c9aad5eeaad21fd6f7f7b4fdbdb1a35ce83b89cca12a187f00.svg"
-                />
-              </li>
-              <li style="display: inline-block; margin: 5px">
-                <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/klarna-389801c6056cb5600b4f05f72ebc2c58e4947688c6c4f5e6ccea41f7973d3a28.svg"
-                />
-              </li>
-            </ul> -->
+            <p class="oreder-ptag">{{sum | currency: "INR" : "Rs."}} INR</p>
           </div>
         </div>
       </div>
@@ -109,7 +64,7 @@
               <option class="product_option">UK16 / US12 / EU44</option>
               <option class="product_option">UK18 / US14 / EU46</option>
             </select>
-            <button class="btn btnaddbag">add to bag</button>
+            <button class="btn btnaddbag" >add to bag</button>
           </ng-template>
         </ng-container>
       </owl-carousel-o>

@@ -1,21 +1,36 @@
 <app-header></app-header>
 <div class="container">
   <div class="row">
-    <p class="account">my account</p>
+    <p class="account">My Account</p>
     <div class="col-md-3">
       <div class="profilepinkcard">
         <div class="card_image">
-          <img
-            src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SUMMER22_6449_medium.jpg?v=1656426740"
+          <!-- src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SUMMER22_6449_medium.jpg?v=1656426740" -->
+          <!-- src='http://localhost:3000/{{image}}' -->
+          <img *ngIf="!file"
+            onerror="this.onerror=null;this.src='assets/images/avtar_profile.png'"
+            src="http://localhost:3000/{{ image }}"
+            style="border-radius: 100px; height: 157px; width: 175px"
+          />
+          <img *ngIf="file"
+            [src]='profile_preview'
             style="border-radius: 100px; height: 157px; width: 175px"
           />
         </div>
-        <div class="image-upload">
-          <label for="file-input" class="labeledit" style="display: flex">
-            <i class="fa fa-user" aria-hidden="true" ></i>
-            <p class="editimage">Edit Image</p>
-          </label>
-          <input id="file-input" type="file" />
+        <div class="image-upload" *ngIf="profileform">
+          <form [formGroup]="ProfileForm" enctype="multipart/form-data">
+            <label for="file-input" class="labeledit" style="display: flex">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <p class="editimage">Edit Image</p>
+            </label>
+            <input
+              id="file-input"
+              type="file"
+              #file
+              (change)="onFileSelect($event)"
+              hidden
+            />
+          </form>
         </div>
         <hr />
         <p class="profile_sidebar" (click)="personal_detail()">
@@ -23,7 +38,9 @@
         </p>
         <hr />
         <p class="profile_sidebar">
-          <a href="forgotpassword" style="color: black; text-decoration: none"
+          <a
+            (click)="btnChangePwd()"
+            style="color: black; text-decoration: none"
             >Change Password</a
           >
         </p>
@@ -38,48 +55,60 @@
       <div class="profilepinkcard">
         <div style="display: flex">
           <p class="profile_detail">First Name :</p>
-          <span style="margin-left: 116px">Pratiksha</span>
+          <span style="margin-left: 116px">{{ firstname }}</span>
         </div>
         <hr />
         <div style="display: flex">
           <p class="profile_detail">Last Name:</p>
-          <span style="margin-left: 120px">Sheliya</span>
+          <span style="margin-left: 120px">{{ lastname }}</span>
         </div>
         <hr />
         <div style="display: flex">
           <p class="profile_detail">Email :</p>
-          <span style="margin-left: 150px">Pratiksha@gmail.com</span>
+          <span style="margin-left: 150px">{{ email }}</span>
         </div>
         <hr />
         <div style="display: flex">
           <p class="profile_detail">Phone Number :</p>
-          <span style="margin-left: 70px">1234567890</span>
+          <span style="margin-left: 70px">{{ phonenumber }}</span>
+          <!-- <span style="margin-left: 70px">+91 **********</span> -->
         </div>
 
         <hr />
         <div style="display: flex">
           <p class="profile_detail">Address :</p>
-          <span style="margin-left: 120px">Surat</span>
+          <span style="margin-left: 120px">{{ address }}</span>
         </div>
         <hr />
         <div style="display: flex">
           <p class="profile_detail">City :</p>
-          <span style="margin-left: 160px">Surat</span>
+          <span style="margin-left: 160px">{{ city }}</span>
         </div>
       </div>
     </div>
     <div class="col-md-9" *ngIf="profileform">
       <div class="profilepinkcard">
-        <form>
+        <form [formGroup]="ProfileForm">
           <div class="row">
+            <input type="text" formControlName="_id" hidden />
             <div class="col-md-6">
               <span>First Name</span
               ><input
                 type="text"
                 class="form-control"
                 placeholder="First Name"
+                formControlName="firstname"
+                [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }"
                 required
               />
+              <div
+                *ngIf="submitted && f['firstname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['firstname'].errors['required']">
+                  First name is required
+                </div>
+              </div>
             </div>
             <div class="col-md-6">
               <span>Last Name</span
@@ -87,8 +116,19 @@
                 type="text"
                 class="form-control"
                 placeholder="Last Name"
+                formControlName="lastname"
+                [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
                 required
-              /><br />
+              />
+              <div
+                *ngIf="submitted && f['lastname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['lastname'].errors['required']">
+                  Last Name is required
+                </div>
+              </div>
+              <br />
             </div>
           </div>
           <br />
@@ -100,8 +140,22 @@
                 type="email"
                 class="form-control"
                 placeholder="Email"
+                formControlName="email"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
                 required
-              /><br />
+              />
+              <div
+                *ngIf="submitted && f['email'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['email'].errors['required']">
+                  Email is required
+                </div>
+                <div *ngIf="f['email'].errors['email']">
+                  Email must be a valid email address
+                </div>
+              </div>
+              <br />
             </div>
             <div class="col-md-6">
               <span>City</span>
@@ -109,8 +163,17 @@
                 type="text"
                 class="form-control"
                 placeholder="City"
+                formControlName="city"
+                [ngClass]="{ 'is-invalid': submitted && f['city'].errors }"
                 required
-              /><br />
+              />
+              <div
+                *ngIf="submitted && f['city'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['city'].errors['required']">City is required</div>
+              </div>
+              <br />
             </div>
           </div>
           <br />
@@ -119,11 +182,28 @@
             <div class="col-md-6">
               <span>Phone Number</span>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 placeholder="Phone Number"
+                formControlName="phonenumber"
+                [ngClass]="{
+                  'is-invalid': submitted && f['phonenumber'].errors
+                }"
                 required
-              /><br />
+              />
+              <div
+                *ngIf="submitted && f['phonenumber'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['phonenumber'].errors['required']">
+                  Phone Number is required
+                </div>
+                <div *ngIf="f['phonenumber'].errors['pattern']">
+                  Please, Enter 10 digit Mobile Number.
+                </div>
+              </div>
+
+              <br />
             </div>
             <div class="col-md-6">
               <span>Address</span>
@@ -131,20 +211,22 @@
                 type="text"
                 class="form-control"
                 placeholder="Address"
+                [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"
+                formControlName="address"
                 required
-              /><br />
+              />
+              <div
+                *ngIf="submitted && f['address'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['address'].errors['required']">
+                  Address is required
+                </div>
+              </div>
+              <br />
             </div>
           </div>
           <br />
-
-          <!-- <span>Profile Image</span
-          ><input
-            type="file"
-            class="form-control"
-            placeholder="Image"
-            required
-          /> -->
-          <!-- <br /> -->
           <button class="btn btnsubmit" (click)="btnSubmit()">Submit</button>
         </form>
       </div>

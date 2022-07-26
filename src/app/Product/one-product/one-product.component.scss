@@ -19,7 +19,6 @@ hr {
   font-family: "fugueregular";
   font-size: 1.6rem;
   letter-spacing: 1px;
-  text-transform: lowercase;
   font-weight: 600;
   text-align: center;
   width: 100%;
@@ -319,15 +318,37 @@ hr {
   margin-bottom: 2rem;
   margin-top: 4rem;
 }
-.slide_content{
-    font-family: Avenir Medium;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: lowercase;
-    font-weight: revert;
-    text-align: center;
-    width: 100%;
-    // margin-bottom: 2rem;
-    margin-top: 14px;
-    cursor: pointer;
+.slide_content {
+  font-family: Avenir Medium;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: revert;
+  text-align: center;
+  width: 100%;
+  // margin-bottom: 2rem;
+  margin-top: 14px;
+  cursor: pointer;
+}
+.product-top {
+  font-family: fugueregular;
+  width: 100%;
+  color: #777;
+  font-size: 18px;
+  height: 32px;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -31px;
+}
+.product-code {
+  margin-top: 18px;
+  margin-left: 88px;
+}
+.msg{
+  text-align: center;
+  margin-left: 134px;
+  margin-right: -115px;
+  color: #888b8d;
+  font-family: Avenir Medium;
 }

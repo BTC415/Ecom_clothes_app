@@ -13,7 +13,7 @@ export class LoginauthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       const TokenItem = localStorage.getItem("token")
-      console.log("TokenItem",TokenItem);
+      // console.log("TokenItem",TokenItem);
       
       if(TokenItem){
         this.router.navigate(['/home'])

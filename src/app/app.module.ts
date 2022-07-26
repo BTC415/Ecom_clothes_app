@@ -25,6 +25,7 @@ import { AboutComponent } from './Users/about/about.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ChangePasswordComponent } from './Users/change-password/change-password.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     WishlistComponent,
     ProfileComponent,
     ForgotpwdComponent,
-    AboutComponent
+    AboutComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

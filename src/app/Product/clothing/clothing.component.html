@@ -16,20 +16,21 @@
   </div>
   <div class="row clothing_row">
     <ul class="clothing_ul" style="display: flex">
-      <a><li class="cloth_li">dresses</li></a>
-      <a><li class="cloth_li">suits</li></a>
-      <a><li class="cloth_li">Jumpsuits & Playsuits</li></a>
-      <a><li class="cloth_li">tops</li></a>
-      <a><li class="cloth_li">shorts</li></a>
-      <a><li class="cloth_li">Trousers</li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Dresses ')">Dresses </li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Suits')">Suits</li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Jumpsuits')">Jumpsuits</li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Tops')">Tops</li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Shorts')">Shorts</li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Trousers')">Trousers</li></a>
     </ul>
   </div>
   <div class="row" style="background-color: white; height: 2.5rem"></div>
+
   <div class="row" style="background-color: white">
     <div class="col-md-1">
       <select class="sortby">
         <option class="sort_option" value="manual">Sort by: Featured</option>
-        <option class="sort_option" value="manual">Best Selling</option>
+        <!-- <option class="sort_option" value="manual">Best Selling</option> -->
         <option class="sort_option" value="a-z">Alphabetically, A-Z</option>
         <option class="sort_option" value="lowToHigh">
           Price, low to high
@@ -41,10 +42,10 @@
         <option class="sort_option" value="oldToNew">Date, old to new</option>
       </select>
     </div>
-    <div class="col-md-3 card cloth_card">
-      <a href="/product">
+    <div class="col-md-3 card cloth_card" *ngFor="let product of products" >
+      <a (click)="btnOneProduct(product._id)">
         <img
-          src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_CAMPAIGN_114005_750x.progressive.jpg?v=1652698977"
+          [src]="env.apiUrl + 'product_images/' + product.images[0].name"
           class="card-img-top"
           alt="..."
       /></a>
@@ -53,140 +54,71 @@
           <span class="product-label-inner">new season</span>
         </div>
         <p class="product-title">
-          Curve Pearl Trim Cut Out Waist Blazer Dress in White
+          {{ product.name }}
         </p>
-        <p class="product-title">Rs. 11,000.00</p>
-      </div>
-    </div>
-    <div class="col-md-3 card cloth_card">
-      <img
-        src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_112859_750x.progressive.jpg?v=1655752409"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="product-details">
-        <div class="product_label">
-          <span class="product-label-inner">new season</span>
-        </div>
         <p class="product-title">
-          Curve Pearl Trim Cut Out Waist Blazer Dress in White
+          sale Rs. {{ math.trunc((product.price * product.discount) / 100) }}
+          <span style="text-decoration: line-through"
+            >Rs.{{ product.price }}
+          </span>
         </p>
-        <p class="product-title">Rs. 11,000.00</p>
+        <p class="product-title">{{ product.discount }}% off</p>
+        <p class="product-title">{{ product.category }}</p>
+        <p class="product-title">{{ product.product_collection }}</p>
       </div>
     </div>
-    <div class="col-md-3 card cloth_card">
-      <img
-        src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_105068_750x.progressive.jpg?v=1653067612"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="product-details">
-        <div class="product_label">
-          <span class="product-label-inner">new season</span>
-        </div>
-        <p class="product-title">
-          Curve Pearl Trim Cut Out Waist Blazer Dress in White
-        </p>
-        <p class="product-title">Rs. 11,000.00</p>
-      </div>
-    </div>
-  </div>
-  <div class="row" style="background-color: white">
     <div class="col-md-1"></div>
-    <div class="col-md-3 card cloth_card">
-      <img
-        src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_107937_750x.progressive.jpg?v=1655873987"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="product-details">
-        <div class="product_label">
-          <span class="product-label-inner">new season</span>
-        </div>
-        <p class="product-title">
-          Curve Pearl Trim Cut Out Waist Blazer Dress in White
-        </p>
-        <p class="product-title">Rs. 11,000.00</p>
-      </div>
-    </div>
-    <div class="col-md-3 card cloth_card">
-      <img
-        src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_ECOM_106630_750x.progressive.jpg?v=1653067583"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="product-details">
-        <div class="product_label">
-          <span class="product-label-inner">new season</span>
-        </div>
-        <p class="product-title">
-          Curve Pearl Trim Cut Out Waist Blazer Dress in White
-        </p>
-        <p class="product-title">Rs. 11,000.00</p>
-      </div>
-    </div>
-    <div class="col-md-3 card cloth_card">
-      <img
-        src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SPRING22_CAMPAIGN_114005_750x.progressive.jpg?v=1652698977"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="product-details">
-        <div class="product_label">
-          <span class="product-label-inner">new season</span>
-        </div>
-        <p class="product-title">
-          Curve Pearl Trim Cut Out Waist Blazer Dress in White
-        </p>
-        <p class="product-title">Rs. 11,000.00</p>
-      </div>
-    </div>
   </div>
-</div>
-<ng-template #content let-modal class="supportmodel">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Leave us a message</h4>
-    <button
-      type="button"
-      class="btn close"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    >
-      <span aria-hidden="true" class="close"> × </span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <!-- <div class="form-group"> -->
-      <!-- <div class="input-group"> -->
-      <label>Name</label>
-      <input class="form-control suppotinput" name="name" />
-      <label>Email</label>
-      <input class="form-control suppotinput" name="email" />
-      <label>How can we help you?</label>
-      <textarea class="form-control suppotinput" rows="4" cols="50"></textarea>
-      <label>Attachments</label>
-      <div class="btn btnfile"><input type="file" class="inputfile" /></div>
-      <!-- </div> -->
-      <!-- </div> -->
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btnmodelsave"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
-  </div>
-</ng-template>
-<div class="container-fluid">
-  <div class="row" style="height: 4rem">
-    <button class="myBtn" title="Go to top" (click)="open(content)">
-      <i class="fa fa-question-circle" aria-hidden="true"></i>Support
-    </button>
-  </div>
-</div>
 
-<app-footer></app-footer>
+  <ng-template #content let-modal class="supportmodel">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Leave us a message</h4>
+      <button
+        type="button"
+        class="btn close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true" class="close"> × </span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <!-- <div class="form-group"> -->
+        <!-- <div class="input-group"> -->
+        <label>Name</label>
+        <input class="form-control suppotinput" name="name" />
+        <label>Email</label>
+        <input class="form-control suppotinput" name="email" />
+        <label>How can we help you?</label>
+        <textarea
+          class="form-control suppotinput"
+          rows="4"
+          cols="50"
+        ></textarea>
+        <label>Attachments</label>
+        <div class="btn btnfile"><input type="file" class="inputfile" /></div>
+        <!-- </div> -->
+        <!-- </div> -->
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btnmodelsave"
+        (click)="modal.close('Save click')"
+      >
+        Save
+      </button>
+    </div>
+  </ng-template>
+  <div class="container-fluid">
+    <div class="row" style="height: 4rem">
+      <button class="myBtn" title="Go to top" (click)="open(content)">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>Support
+      </button>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

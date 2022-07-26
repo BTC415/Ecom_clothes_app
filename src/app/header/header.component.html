@@ -3,7 +3,9 @@
     <div class="col-md-5"></div>
     <div class="col-md-4 firstnav">
       <p class="india" *ngIf="!firstName">NOW SHIPPING TO INDIA</p>
-      <p class="headername" *ngIf="firstName">Welcome, {{firstName}} {{lastName}}</p>
+      <p class="headername" *ngIf="firstName">
+        Welcome, {{ firstName }} {{ lastName }}
+      </p>
     </div>
     <div class="col-md-3"></div>
   </div>
@@ -37,7 +39,7 @@
             Wish List</a
           >
         </li>
-        <li *ngIf="!firstName"> 
+        <li *ngIf="!firstName">
           <a class="account" href="/login"
             ><img
               src="//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/account-icon.svg?v=180824494737641918611651157365"
@@ -48,7 +50,7 @@
           >
         </li>
         <li *ngIf="firstName">
-          <a class="account" style="line-height: 2;" href="/profile"
+          <a class="account" style="line-height: 2" href="/profile"
             ><img
               src="//cdn.shopify.com/s/files/1/2722/8634/t/72/assets/account-icon.svg?v=180824494737641918611651157365"
               width="20"
@@ -89,7 +91,7 @@
         <ul class="navbarfourth">
           <li>
             <div class="new-in">
-              <a class="nav_item newin" href="/clothing">Home</a>
+              <a class="nav_item newin" href="/home">Home</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -106,35 +108,65 @@
             <ul class="dropdown-menu hide" aria-labelledby="navbarDropdown">
               <div class="container">
                 <div class="row submenu-row">
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <li class="mainmenu">collection</li>
-                    <li><a class="collection-menu">the main event</a></li>
-                    <li><a class="collection-menu">resort</a></li>
-                    <li><a class="collection-menu">holiday collection</a></li>
-                    <li><a class="collection-menu">holiday collection</a></li>
-                    <li><a class="collection-menu">holiday collection</a></li>
+                    <li><a class="collection-menu" (click)="btnCollection('Sunkissed')">Sunkissed</a></li>
+                    <li><a class="collection-menu" (click)="btnCollection('The Main Event')">The Main Event</a></li>
+                    <li><a class="collection-menu" (click)="btnCollection('Resort')">Resort</a></li>
+                    <li>
+                      <a class="collection-menu" (click)="btnCollection('The Holiday Collection')">The Holiday Collection</a>
+                    </li>
+                    <li><a class="collection-menu" (click)="btnCollection('Lost Garden')">Lost Garden</a></li>
+                    <li><a class="collection-menu" (click)="btnCollection('Occasionwear')">Occasionwear</a></li>
+                    <li><a class="collection-menu" (click)="btnCollection('Partywear')">Partywear</a></li>
+                    <li><a class="collection-menu" (click)="btnCollection('Activewear')">Activewear</a></li>
                   </div>
                   <div class="col-md-3">
                     <li class="mainmenu">category</li>
                     <li>
-                      <a class="collection-menu" href="#">the main event</a>
+                      <a
+                        class="collection-menu"
+                        (click)="btnCategory('Dresses')"
+                        >Dresses</a
+                      >
                     </li>
-                    <li><a class="collection-menu" href="#">resort</a></li>
                     <li>
-                      <a class="collection-menu" href="#">holiday collection</a>
+                      <a
+                        class="collection-menu"
+                        (click)="btnCategory('Suits')"
+                        >Suits</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="collection-menu"
+                        (click)="btnCategory('Jumpsuits')"
+                        >Jumpsuits</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="collection-menu"
+                        (click)="btnCategory('Tops')"
+                        >Tops</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="collection-menu"
+                        (click)="btnCategory('Shorts')"
+                        >Shorts</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="collection-menu"
+                        (click)="btnCategory('Trousers')"
+                        >Trousers</a
+                      >
                     </li>
                   </div>
-                  <div class="col-md-3">
-                    <li class="mainmenu">edit</li>
-                    <li>
-                      <a class="collection-menu" href="#">the main event</a>
-                    </li>
-                    <li><a class="collection-menu" href="#">resort</a></li>
-                    <li>
-                      <a class="collection-menu" href="#">holiday collection</a>
-                    </li>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-md-5">
                     <img
                       src="//cdn.shopify.com/s/files/1/2722/8634/files/E21.2_Clothing_Banner_600x.progressive.jpg?v=1647628192"
                       style="width: 11rem; margin-left: -10px; height: 14rem"
@@ -146,12 +178,7 @@
           </li>
           <li>
             <div class="new-in">
-              <a class="nav_item newin" href="/clothing">newin</a>
-            </div>
-          </li>
-          <li>
-            <div class="new-in">
-              <a class="nav_item" href="/clothing">Curve</a>
+              <a class="nav_item newin" (click)="btnNewIn('newin')">newin</a>
             </div>
           </li>
           <li>

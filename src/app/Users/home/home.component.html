@@ -41,7 +41,7 @@
 
     <div class="carousel-inner">
       <div class="row">
-        <div class="col-4">
+        <div class="col-4" (click)="btnHomepage('newin')">
           <div class="card senimagecard">
             <img src="assets/images/3-1.webp" />
             <div class="lc-content">
@@ -50,7 +50,7 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" (click)="btnweddingpage('Jumpsuits')">
           <div class="card senimagecard">
             <img src="assets/images/3-2.webp" />
             <div class="lc-content">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" (click)="btnweddingpage('Suits')">
           <div class="card senimagecard">
             <img src="assets/images/3-3.webp" />
             <div class="lc-content">
@@ -166,16 +166,17 @@
   </div>
 </div>
 <owl-carousel-o [options]="customOptions">
-  <ng-container *ngFor="let slide of trending_images">
-    <ng-template carouselSlide [id]="slide.id">
+  <ng-container *ngFor="let product of products">
+    <ng-template carouselSlide [id]="product.id">
       <img
-        [src]="slide.path"
+        [src]="env.apiUrl + 'product_images/' + product.images[0].name"
         style="cursor: pointer; padding: 16px"
         height="500px"
         width="0px"
+        (click)="btnOneProduct(product._id)"
       />
-      <p class="slide_content">{{ slide.content }}</p>
-      <p class="slide_content">{{ slide.price }}</p>
+      <p class="slide_content">{{ product.name }}</p>
+      <p class="slide_content">Rs. {{ product.price }}</p>
     </ng-template>
   </ng-container>
 </owl-carousel-o>
@@ -195,16 +196,16 @@
   <div class="modal-body">
     <form>
       <!-- <div class="form-group"> -->
-        <!-- <div class="input-group"> -->
-          <label>Name</label>
-          <input class="form-control suppotinput" name="name" />
-          <label>Email</label>
-          <input class="form-control suppotinput" name="email" />
-          <label>How can we help you?</label>
-          <textarea class="form-control suppotinput" rows="4" cols="50"></textarea>
-          <label>Attachments</label>
-          <div class="btn btnfile"><input type="file" class="inputfile"/></div>
-        <!-- </div> -->
+      <!-- <div class="input-group"> -->
+      <label>Name</label>
+      <input class="form-control suppotinput" name="name" />
+      <label>Email</label>
+      <input class="form-control suppotinput" name="email" />
+      <label>How can we help you?</label>
+      <textarea class="form-control suppotinput" rows="4" cols="50"></textarea>
+      <label>Attachments</label>
+      <div class="btn btnfile"><input type="file" class="inputfile" /></div>
+      <!-- </div> -->
       <!-- </div> -->
     </form>
   </div>

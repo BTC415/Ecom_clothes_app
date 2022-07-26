@@ -193,3 +193,9 @@ label {
   transform: none;
   margin-top: 15rem;
 }
+::ng-deep .modal-dialog {
+  @media (min-width: 576px)
+  {
+    margin: 8em auto !important;
+  }
+}

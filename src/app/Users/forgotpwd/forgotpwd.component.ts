@@ -15,23 +15,26 @@ export class ForgotpwdComponent implements OnInit {
     private toastr: ToastrService,
     private api: ApiService,
     private acroute: ActivatedRoute,
-    private router : Router
+    private router: Router
   ) {}
   submitted = false;
   _id: any;
   ngOnInit(): void {
-    this.formforgotpwd = this.fb.group({
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{6,}'
-          ),
+    this.formforgotpwd = this.fb.group(
+      {
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(
+              '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{6,}'
+            ),
+          ],
         ],
-      ],
-      confirmpwd: ['', Validators.required],
-    });
+        confirmpwd: ['', Validators.required],
+      },
+     
+    );
 
     this._id = this.acroute.snapshot.queryParams['id'];
     console.log('id', this._id);
@@ -40,7 +43,6 @@ export class ForgotpwdComponent implements OnInit {
     return this.formforgotpwd.controls;
   }
   btnsubmit() {
-    this.submitted = true;
     if (
       this.formforgotpwd.value.password !== this.formforgotpwd.value.confirmpwd
     ) {
@@ -59,7 +61,7 @@ export class ForgotpwdComponent implements OnInit {
           this.toastr.success('Password change successfully.', '', {
             timeOut: 2000,
           });
-          this.router.navigate(['/login'])
+          this.router.navigate(['/login']);
         },
         error: (error) => {
           console.log('error', error);

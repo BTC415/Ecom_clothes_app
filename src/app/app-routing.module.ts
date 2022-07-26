@@ -7,6 +7,7 @@ import { WishlistComponent } from './Product/wishlist/wishlist.component';
 import { LoginauthGuard } from './services/loginauth.guard';
 import { ContactComponent } from './Social/contact/contact.component';
 import { AboutComponent } from './Users/about/about.component';
+import { ChangePasswordComponent } from './Users/change-password/change-password.component';
 import { ForgotpwdComponent } from './Users/forgotpwd/forgotpwd.component';
 import { HomeComponent } from './Users/home/home.component';
 import { LoginComponent } from './Users/login/login.component';
@@ -20,11 +21,15 @@ const routes: Routes = [
   {path:'home' , component:HomeComponent,  },
   {path:'clothing' , component:ClothingComponent},
   {path:'product' , component:OneProductComponent},
+  {path:'product/:id' , component:OneProductComponent},
   {path:'contact' , component:ContactComponent},
   {path:'cart' , component:CartComponent},
   {path:'wishlist' , component:WishlistComponent},
   {path:'profile' , component:ProfileComponent},
   {path:'forgotpassword' , component:ForgotpwdComponent},
+  {path:'forgotpassword/:id' , component:ForgotpwdComponent},
+  {path:'changepassword' , component:ChangePasswordComponent},
+  {path:'changepassword/:id' , component:ChangePasswordComponent},
   {path:'about' , component:AboutComponent},
   {path:'**' , component:LoginComponent},
 ];

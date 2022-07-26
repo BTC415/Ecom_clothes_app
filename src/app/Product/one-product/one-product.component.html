@@ -12,11 +12,14 @@
       </div>
     </div>
     <div class="col-md-5 clothing_detail">
+      <div class="product-top">
+        <p class="product-code">code: {{ code }}</p>
+      </div>
       <hr />
       <p class="statement">
-        statement collar colour block blazer in magenta pink
+        {{ product?.name | titlecase }}
       </p>
-      <p class="rs">Rs. 10,800.00</p>
+      <p class="rs">Rs. {{ product?.price }}</p>
       <label class="product-variant-select-label">Size:</label>
       <select class="product_select">
         <option class="product_option">UK4 / US0 / EU32</option>
@@ -29,9 +32,11 @@
         <option class="product_option">UK18 / US14 / EU46</option>
       </select>
       <div class="iwishAddWrap">
-        <a class="iWishAdd">Add to Wishlist</a>
+        <a class="iWishAdd" (click)="btnWishList()">Add to Wishlist</a><br>
+        <a class="msg">{{msg}}</a>
       </div>
-      <button class="btn btnsold">sold out</button>
+      <button class="btn btnsold" *ngIf="product?.quantity === 0">sold out</button>
+      <button class="btn btnsold" *ngIf="product?.quantity !== 0">Add to bag</button>
 
       <label for="checkbox" id="checkboxLabel" class="product_info"
         >PRODUCT INFO</label
@@ -40,71 +45,15 @@
       <input type="checkbox" id="checkbox" />
       <div id="stuffToShow">
         <p class="product_content">
-          A dreamy colour combo. We have a feeling this power suit is going to
-          be a best-seller! Make a statement this season in this chic and
-          elegant fit.
+          {{ description }}
         </p>
-        <p class="product_content">Material: 95% Polyester 5% Elastane</p>
-        <p class="product_content">Care: Hand Wash Only</p>
-        <p class="product_content">Model Wears: UK 8 | EU 36 | US 4</p>
+        <p class="product_content">Material: {{ material }}</p>
+        <p class="product_content">Care: {{ care }}</p>
+        <p class="product_content">Model Wears:{{ modelSize }}</p>
         <p class="product_content" style="margin-bottom: 3rem">
-          Model's Height: 170cm | 5’7”
+          Model's Height: {{ modelHeight }}
         </p>
       </div>
-      <label for="checkbox2" id="checkbox2Label2" class="DELIVERY_info"
-        >DELIVERY</label
-      >
-      <hr />
-      <input type="checkbox" id="checkbox2" />
-      <div id="stuffToShow2">
-        <p class="DELIVERY_header">United Kingdom (& Northern Ireland)</p>
-        <div class="callout pink">
-          <p class="DELIVERY_content">
-            Standard Delivery (3 to 5 business days)
-          </p>
-          <p class="DELIVERY_content_light">
-            £4.99 or free if you spend over £120.00
-          </p>
-          <p class="DELIVERY_content">
-            Next Day Delivery (order before 18:00 GMT Monday - Friday)
-          </p>
-          <p class="DELIVERY_content_light">
-            £9.99 or free if you spend over £150.00
-          </p>
-          <p class="DELIVERY_content">
-            Next Day Delivery by 13:00 GMT Guaranteed
-          </p>
-          <p class="DELIVERY_content_light">
-            £14.99 (order before 18:00 GMT Monday - Thursday)
-          </p>
-          <p class="DELIVERY_content">
-            £9.99 or free if you spend over £150.00
-          </p>
-          <p class="DELIVERY_content_light">
-            All deliveries in the United Kingdom are made by Royal Mail and
-            orders must be placed before 18:00 GMT for next day delivery. Our
-            standard services usually take 24 - 48 hours, however please allow
-            up to 5 business days during busy periods.
-          </p>
-        </div>
-
-        <!-- <input type="checkbox" id="checkbox2" /> -->
-        <!-- <div id="stuffToShow2"> -->
-        <p class="DELIVERY_header">Republic of Ireland</p>
-        <div class="callout pink">
-          <p class="DELIVERY_content">Tracked Post (3 to 4 business days)</p>
-          <p class="DELIVERY_content_light">Free</p>
-          <p class="DELIVERY_content">Standard Courier (2 business days)</p>
-          <p class="DELIVERY_content_light">€15.00</p>
-          <p class="DELIVERY_content">DHL Air Express (1 business day)</p>
-          <p class="DELIVERY_content_light">€20.00</p>
-          <p class="DELIVERY_content_light">
-            All orders placed within the Republic of Ireland are inclusive of
-            all taxes, duties & charges.
-          </p>
-        </div>
-      </div>
-      <!-- </div> -->
       <label for="checkbox3" id="checkbox3Label3" class="RETURNS_info"
         >RETURNS</label
       >
@@ -167,16 +116,17 @@
     <h5 class="related">related products</h5>
 
     <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let slide of related_images">
-        <ng-template carouselSlide [id]="slide.id">
+      <ng-container *ngFor="let product of allProducts">
+        <ng-template carouselSlide [id]="product.id">
           <img
-            [src]="slide.path"
+            [src]="env.apiUrl + 'product_images/' + product.images[0].name"
             style="cursor: pointer; padding: 16px"
-            height="400px"
+            height="450px"
             width="0px"
+            (click)="btnRelated_product(product._id)"
           />
-          <p class="slide_content">{{ slide.content }}</p>
-          <p class="slide_content">{{ slide.price }}</p>
+          <p class="slide_content">{{ product.name }}</p>
+          <p class="slide_content">{{ product.price | currency: 'INR': 'Rs.' }}</p>
         </ng-template>
       </ng-container>
     </owl-carousel-o>
