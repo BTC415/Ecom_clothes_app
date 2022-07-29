@@ -61,24 +61,44 @@ export class ApiService {
   }
 
   //add wishlist
-  addWishList(data:any):Observable<any>{
-    return this.http.post("http://localhost:3000/addwishlist",data)
+  addWishList(data: any): Observable<any> {
+    return this.http.post('http://localhost:3000/addwishlist', data);
   }
 
   //display wishlist
-  getWishlistData():Observable<any>{
-    return this.http.get("http://localhost:3000/wishlistdata",{headers : this.getHeaders()})
+  getWishlistData(): Observable<any> {
+    return this.http.get('http://localhost:3000/wishlistdata', {
+      headers: this.getHeaders(),
+    });
   }
 
   //delete wishlist
-  deleteWishList(data:any):Observable<any>{
-    return this.http.delete("http://localhost:3000/deletewishlist", {headers: this.getHeaders(), body: data})
+  deleteWishList(data: any): Observable<any> {
+    return this.http.delete('http://localhost:3000/deletewishlist', {
+      headers: this.getHeaders(),
+      body: data,
+    });
   }
 
-//add cart
- addCart(data:any):Observable<any>{
-  return this.http.post("http://localhost:3000/addcart",data)
-}
+  //add cart
+  addCart(data: any): Observable<any> {
+    return this.http.post('http://localhost:3000/addcart', data);
+  }
+
+  //display cart data
+  getCartData(): Observable<any> {
+    return this.http.get('http://localhost:3000/getcart', {
+      headers: this.getHeaders(),
+    });
+  }
+
+  //delete cart product
+  deleteCartData(data: any): Observable<any> {
+    return this.http.delete('http://localhost:3000/deletecart', {
+      headers: this.getHeaders(),
+      body: data,
+    });
+  }
 
   Userloggedin(): Observable<any> {
     return this.http.get('http://localhost:3000/userloggedin', {

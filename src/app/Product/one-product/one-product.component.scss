@@ -88,6 +88,7 @@ hr {
   font-size: 1rem;
   margin-left: 8rem;
   border-radius: 0;
+  margin-bottom: 10px;
 }
 .btnsold:hover {
   background-color: #d36d78;
@@ -348,6 +349,13 @@ hr {
 .msg{
   text-align: center;
   margin-left: 134px;
+  margin-right: -115px;
+  color: #888b8d;
+  font-family: Avenir Medium;
+}
+.cartmsg{
+  text-align: center;
+  margin-left: 157px;
   margin-right: -115px;
   color: #888b8d;
   font-family: Avenir Medium;

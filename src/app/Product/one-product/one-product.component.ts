@@ -24,8 +24,9 @@ export class OneProductComponent implements OnInit {
   modelSize: any;
   modelHeight: any;
   user_id: any;
-  token:any;
-  msg:any;
+  token: any;
+  msg: any;
+  cartMsg: any;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -215,8 +216,8 @@ export class OneProductComponent implements OnInit {
 
   //wishlist
   btnWishList() {
-    this.token = localStorage.getItem('token')
-    if(this.token){
+    this.token = localStorage.getItem('token');
+    if (this.token) {
       let product_id = this.acRoute.snapshot.params['id'];
       const Obj = { user_id: this.user_id, product_id: product_id };
       this.api.addWishList(Obj).subscribe({
@@ -241,11 +242,40 @@ export class OneProductComponent implements OnInit {
           console.log('error', error);
         },
       });
-    }else{
-      this.msg = "your wishlist has been temporarily saved. please log in to save it permanently." 
-      setTimeout(()=>{                        
-        this.router.navigate(['login'])
-    }, 2500);
+    } else {
+      this.msg = 'You should log in first, then add the item to your wishlist.';
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 2500);
+    }
+  }
+
+  btnAddBag() {
+    this.token = localStorage.getItem('token');
+    if (this.token) {
+      let product_id = this.acRoute.snapshot.params['id'];
+      const Obj = { user_id: this.user_id, product_id: product_id };
+      this.api.addCart(Obj).subscribe({
+        next: (res) => {
+          console.log('res', res);
+          this.toastr.success(
+            'Successfully Add this Product to your Cart.',
+            '',
+            {
+              timeOut: 2000,
+            }
+          );
+          this.router.navigate(['cart']);
+        },
+        error: (error) => {
+          console.log('error', error);
+        },
+      });
+    } else {
+      this.cartMsg = "You should log in first, then add the item to your bag."
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 2500);
     }
   }
 }

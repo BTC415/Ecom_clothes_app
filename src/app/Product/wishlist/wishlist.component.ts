@@ -13,7 +13,7 @@ export class WishlistComponent implements OnInit {
   user_id: any;
   products: any;
   env = environment;
-  sum:any;
+  sum: any;
   customOptions: OwlOptions = {
     loop: true,
     autoplay: false,
@@ -163,23 +163,24 @@ export class WishlistComponent implements OnInit {
       },
     });
   }
-  btnCart(_id:any){
-    const Obj = { user_id: this.user_id, product_id: _id };
-    this.api.addCart(Obj).subscribe({
-      next :(res)=>{
-        console.log("res",res)
-        this.toastr.success(
-          'Successfully Add this Product to your Cart.',
-          '',
-          {
-            timeOut: 2000,
-          }
-        );
+  btnCart(_id: any) {
+    console.log('_id', _id);
+    let obj = {
+      user_id: this.user_id,
+      product_id: _id,
+    };
+    console.log('obj', obj);
+    this.api.addCart(obj).subscribe({
+      next: (res) => {
+        console.log('res', res);
+        this.toastr.success('Successfully Add this Product to your Cart.', '', {
+          timeOut: 2000,
+        });
         this.router.navigate(['cart']);
       },
-      error:(error)=>{
-        console.log("error",error)
-      }
-    })
+      error: (error) => {
+        console.log('error', error);
+      },
+    });
   }
 }

@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div class="search-header">
+  <h1>Search for Products on our site</h1>
+  <input
+    class="form-control"
+    [(ngModel)]="paramsValue"
+    [maxlength]="40"
+  />
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let product of products | filter: paramsValue">
+      <div class="card">
+        <img
+          [src]="env.apiUrl + 'product_images/' + product.image"
+          height="540px"
+        />
+        <p class="product_name">{{ product.name }}</p>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<h3 class="notFound" *ngIf="(products | filter: paramsValue).length === 0">No Products Found :(</h3>
+
+<app-footer></app-footer>

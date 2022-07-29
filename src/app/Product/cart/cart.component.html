@@ -5,27 +5,41 @@
     <div class="col-md-6">
       <p class="shoppingbag">Shopping Bag</p>
       <hr />
-      <div class="pinkcard">
+      <div class="pinkcard" *ngFor="let product of products">
         <div class="card_image">
           <img
-            src="https://cdn.shopify.com/s/files/1/2722/8634/products/LA_SUMMER22_6449_medium.jpg?v=1656426740"
+            [src]="env.apiUrl + 'product_images/' + product.images[0].name"
             height="145px"
           />
         </div>
         <div class="card-detail">
-          <a href="" class="card-ptag"
-            ><p>Ponte Button Detail Cut Out Wrap Dress In White</p></a
+          <a (click)="btnProduct(product._id)" class="card-ptag"
+            ><p>{{ product.name }}</p></a
           >
           <p class="card-ptag" style="text-decoration: none">
-            UK6 / US2 / EU34
+            {{ product.size }}
           </p>
-          <div style="text-align: end; display: flex">
-            <a href="" class="card-ptag"><p>Remove</p></a>
-            <p class="card-ptag" style="text-decoration: none;margin-left: 19rem;">Rs. 13,000.00</p>
+          <div  class="top_cart_flag"style="text-align: end; display: flex">
+            <a class="card-ptag" (click)="btnRemove(product._id)"><p>Remove</p></a>
+            <div class="total_flex_direction">
+              <span>{{product.cart_quantity}} ×  {{(product.price) - (product.price * product.discount /100) | currency : "INR" : "Rs."}}</span>
+              <span>Total: {{(product.cart_quantity) * ((product.price) - (product.price * product.discount /100))}}</span>
+            </div>
           </div>
         </div>
       </div>
-      <a href="/clothing"><p class="shopping">Continue Shopping</p></a>
+      <div class="container" *ngIf="product_length == 0">
+        <div class="row">
+          <!-- <p class="shoppingbag" style="margin-bottom: 2px">Shopping Bag</p>
+          <hr /> -->
+          <p class="bag-empty">Your bag is currently empty.</p>
+          <p class="bag-empty">
+            Check your <a routerLink="/wishlist" style="color: black">wishlist</a> or
+            <a href="/clothing" style="color: black">Continue Shopping</a>
+          </p>
+        </div>
+      </div>
+      <a href="/clothing" *ngIf="product_length != 0"><p class="shopping">Continue Shopping</p></a>
     </div>
     <div class="col-md-1" style="width: 70px"></div>
     <div class="col-md-4">
@@ -35,7 +49,7 @@
           <hr style="width: 354px; margin-top: 1px" />
           <p class="oreder-ptag">Checkout currency: INR ₹</p>
           <p class="oreder-ptag">Your items total</p>
-          <p class="oreder-ptag">Rs. 13,000.00 INR</p>
+          <p class="oreder-ptag">{{math.trunc(sum) | currency : "INR" : "Rs."}}</p>
           <p class="oreder-ptag">Delivery calculated at the next step</p>
           <button class="btn btncheckout">proceed to checkout →</button>
           <p class="accept">We accept:</p>
@@ -86,7 +100,7 @@
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row" style="margin-left: 10px; margin-right: 10px">
     <p class="related-item">Related to Items in your Shopping Bag</p>
     <owl-carousel-o [options]="customOptions">
@@ -115,10 +129,10 @@
       </ng-container>
     </owl-carousel-o>
   </div>
-</div>
+</div> -->
 
 <!-- bag is currently empty. -->
-<div class="container">
+<!-- <div class="container" *ngIf="product_length == 0">
   <div class="row">
     <p class="shoppingbag" style="margin-bottom: 2px">Shopping Bag</p>
     <hr />
@@ -128,5 +142,5 @@
       <a href="/clothing" style="color: black">Continue Shopping</a>
     </p>
   </div>
-</div>
+</div> -->
 <app-footer></app-footer>

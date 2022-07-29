@@ -36,7 +36,8 @@
         <a class="msg">{{msg}}</a>
       </div>
       <button class="btn btnsold" *ngIf="product?.quantity === 0">sold out</button>
-      <button class="btn btnsold" *ngIf="product?.quantity !== 0">Add to bag</button>
+      <button class="btn btnsold" (click)="btnAddBag()" *ngIf="product?.quantity !== 0">Add to bag</button>
+      <a class="cartmsg">{{cartMsg}}</a>
 
       <label for="checkbox" id="checkboxLabel" class="product_info"
         >PRODUCT INFO</label

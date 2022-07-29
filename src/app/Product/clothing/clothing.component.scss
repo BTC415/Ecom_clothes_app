@@ -43,12 +43,18 @@
   cursor: pointer;
 }
 .cloth_card {
-  width: 25rem;
+  width: 32.1%;
   border: 1px solid white;
   cursor: pointer;
+  margin-right: 15px;
+}
+.cloth_card:last-child
+{
+ margin-right: 0;
 }
 .card-img-top {
   border-radius: 0px;
+  height: 500px;
 }
 .card-text {
   font-family: Avenir Medium;
@@ -186,8 +192,16 @@ label {
   color: rgb(255, 255, 255) !important;
   border-color: rgb(47, 57, 65) !important;
 }
+.left_side{
+  width: 8%;
+}
 .supportmodel{
   margin-top: 20rem;
+}
+.right_side{
+  width: 92%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .modal-dialog {
   transform: none;

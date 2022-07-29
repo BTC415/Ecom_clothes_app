@@ -13,11 +13,12 @@ export class ClothingComponent implements OnInit {
   products: any;
   env = environment;
   math = Math;
+  selectedTeam = '';
   constructor(
     private modalService: NgbModal,
     private api: ApiService,
     private acRoute: ActivatedRoute,
-    private router : Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -99,7 +100,48 @@ export class ClothingComponent implements OnInit {
 
   btnOneProduct(_id: any) {
     console.log('id', _id);
-    this.router.navigate(['product/',_id])
+    this.router.navigate(['product/', _id]);
+  }
+
+  compare(a: any, b: any) {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
+
+  onSelected(value: string): void {
+    this.selectedTeam = value;
+    if (this.selectedTeam === 'a-z') {
+      this.products.sort(this.compare);
+    }else if(this.selectedTeam ==='manual'){
+      this.getAllProducts();
+    }
+    else if(this.selectedTeam ==='lowToHigh'){
+      this.products.sort((a:any, b:any) => parseFloat(a.price) - parseFloat(b.price));
+    }
+    else if(this.selectedTeam ==='highToLow'){
+      this.products.sort((a:any, b:any) => parseFloat(b.price) - parseFloat(a.price));
+    }
+    else if(this.selectedTeam ==='newToOld'){
+      this.products.sort(function compare(a:any, b:any) {
+        var dateA:any = new Date(a.date);
+        var dateB:any = new Date(b.date);
+        return dateB - dateA;
+      });
+    }
+    else if(this.selectedTeam ==='oldToNew'){
+      this.products.sort(function compare(a:any, b:any) {
+        var dateA:any = new Date(a.date);
+        var dateB:any = new Date(b.date);
+        return dateA - dateB;
+      });
+    }else{
+      this.getAllProducts();
+    }
   }
 
   //open support dialog

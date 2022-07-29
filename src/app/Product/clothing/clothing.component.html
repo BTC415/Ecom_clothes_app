@@ -26,12 +26,11 @@
   </div>
   <div class="row" style="background-color: white; height: 2.5rem"></div>
 
-  <div class="row" style="background-color: white">
-    <div class="col-md-1">
-      <select class="sortby">
+  <div class="row main_div" style="background-color: white">
+    <div class="left_side">
+      <select class="sortby" #teams (change)="onSelected(teams.value)">
         <option class="sort_option" value="manual">Sort by: Featured</option>
-        <!-- <option class="sort_option" value="manual">Best Selling</option> -->
-        <option class="sort_option" value="a-z">Alphabetically, A-Z</option>
+        <option class="sort_option" value="a-z" >Alphabetically, A-Z</option>
         <option class="sort_option" value="lowToHigh">
           Price, low to high
         </option>
@@ -41,8 +40,11 @@
         <option class="sort_option" value="newToOld">Date, new to old</option>
         <option class="sort_option" value="oldToNew">Date, old to new</option>
       </select>
+   
     </div>
-    <div class="col-md-3 card cloth_card" *ngFor="let product of products" >
+    
+    <div class="right_side">
+    <div class="card cloth_card" *ngFor="let product of products" >
       <a (click)="btnOneProduct(product._id)">
         <img
           [src]="env.apiUrl + 'product_images/' + product.images[0].name"
@@ -63,11 +65,12 @@
           </span>
         </p>
         <p class="product-title">{{ product.discount }}% off</p>
-        <p class="product-title">{{ product.category }}</p>
-        <p class="product-title">{{ product.product_collection }}</p>
+        <!-- <p class="product-title">{{ product.category }}</p>
+        <p class="product-title">{{ product.product_collection }}</p> -->
+        <p class="product-title">{{ product.date }}</p>
       </div>
     </div>
-    <div class="col-md-1"></div>
+  </div>
   </div>
 
   <ng-template #content let-modal class="supportmodel">

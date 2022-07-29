@@ -1,0 +1,49 @@
+.search-header {
+  width: 100%;
+  border-top: 1px solid #e3e3e3;
+  display: inline-block;
+  padding: 30px 0;
+  margin: 0 0 30px;
+}
+.search-header h1 {
+  font-family: Avenir Medium;
+  letter-spacing: 0;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 15px;
+  padding: 0 20px;
+  font-weight: 600;
+}
+.form-control {
+  width: 38%;
+  margin-left: 28rem;
+  border-radius: 0;
+  height: 3rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid rgb(212, 212, 212);
+}
+
+.card {
+  border: none;
+  cursor: pointer;
+}
+.product_name {
+  text-align: center;
+  line-height: 3;
+  font-family: Avenir Medium;
+}
+.notFound{
+    font-family: Avenir Medium;
+    letter-spacing: 0;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 15px;
+    padding: 0 20px;
+    font-weight: 600;
+    margin-bottom: 97px;
+}

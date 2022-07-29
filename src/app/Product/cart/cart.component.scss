@@ -40,6 +40,7 @@
 }
 .card-detail {
   padding: 0 2vw;
+  width: 82%;
 }
 .card-ptag {
   color: #000;
@@ -47,6 +48,9 @@
   text-decoration: underline;
   font-family: Avenir Medium;
   font-size: 16px;
+}
+.card-ptag p {
+  margin-bottom: 0;
 }
 .oreder-summary {
   font-size: 1.5rem;
@@ -161,7 +165,7 @@ select:focus {
 }
 .shopping {
   width: 100%;
-  margin: -21px 34px 10px 32px;
+  margin: -30px 34px 39px 32px;
   padding: 0;
   text-align: left;
   font-size: 16px;
@@ -173,8 +177,25 @@ select:focus {
   cursor: pointer;
   color: black;
 }
-.bag-empty{
-    font-family: Avenir Medium;
-    text-align: center;
-  
+.bag-empty {
+  font-family: Avenir Medium;
+  text-align: center;
+}
+.price {
+  font-size: 10px;
+  margin-right: 4px;
+  text-decoration: line-through;
+}
+.total {
+  font-size: 14px;
+}
+
+.top_cart_flag {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.total_flex_direction {
+  display: flex;
+  flex-direction: column;
 }

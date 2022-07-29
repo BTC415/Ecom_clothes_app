@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './Product/cart/cart.component';
 import { ClothingComponent } from './Product/clothing/clothing.component';
 import { OneProductComponent } from './Product/one-product/one-product.component';
+import { SearchComponent } from './Product/search/search.component';
 import { WishlistComponent } from './Product/wishlist/wishlist.component';
 import { LoginauthGuard } from './services/loginauth.guard';
 import { ContactComponent } from './Social/contact/contact.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'contact' , component:ContactComponent},
   {path:'cart' , component:CartComponent},
   {path:'wishlist' , component:WishlistComponent},
+  {path:'search' , component:SearchComponent},
   {path:'profile' , component:ProfileComponent},
   {path:'forgotpassword' , component:ForgotpwdComponent},
   {path:'forgotpassword/:id' , component:ForgotpwdComponent},

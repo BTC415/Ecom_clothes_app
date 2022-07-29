@@ -26,7 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChangePasswordComponent } from './Users/change-password/change-password.component';
-
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './Product/search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { ChangePasswordComponent } from './Users/change-password/change-password
     ProfileComponent,
     ForgotpwdComponent,
     AboutComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,8 @@ import { ChangePasswordComponent } from './Users/change-password/change-password
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
