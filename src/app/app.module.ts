@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './Product/search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+
 @NgModule({
   declarations: [
     AppComponent,

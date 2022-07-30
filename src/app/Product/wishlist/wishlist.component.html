@@ -24,6 +24,8 @@
             <button class="btn btnaddcard" (click)="btnCart(product._id)">Add to Cart</button>
           </div>
         </div>
+      <p class="bag-empty" *ngIf="products?.length == 0">Your wish list is currently empty.</p>
+
         <a href="/clothing"><p class="shopping">Continue Shopping</p></a>
       </div>
       <div class="col-md-1" style="width: 70px"></div>
@@ -40,7 +42,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row" style="margin-left: 10px; margin-right: 10px">
       <p class="related-item">Related to Items in your Shopping Bag</p>
       <owl-carousel-o [options]="customOptions">
@@ -69,11 +71,5 @@
         </ng-container>
       </owl-carousel-o>
     </div>
-  </div>
-<div class="container">
-    <div class="row">
-      <p class="shoppingbag" style="margin-bottom: 2px;">My Wishlist</p>
-      <p class="bag-empty">Wishlist is not saved permanently yet. Please <a href="" style="color: black;">Login </a> or <a href="/signup" style="color: black;">Create Account</a> to save it</p>
-    </div>
-  </div>
+  </div> -->
 <app-footer></app-footer>

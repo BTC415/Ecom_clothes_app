@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   products: any;
   env = environment;
   math = Math;
-  sum: any = 0;
+  sum: any;
   product_length: any;
   customOptions: OwlOptions = {
     loop: true,
@@ -107,6 +107,7 @@ export class CartComponent implements OnInit {
   constructor(private api: ApiService, private router: Router) {}
 
   ngOnInit(): void {
+    // this.calTotal();
     this.getCartData();
   }
 
@@ -115,7 +116,21 @@ export class CartComponent implements OnInit {
       next: (res) => {
         this.products = res.data;
         this.product_length = this.products.length;
-        this.calTotal();
+        let price: any[] = [];
+
+        this.products.map((i: any) => {
+          let product_price =
+            (i.price - (i.price * i.discount) / 100) * i.cart_quantity;
+          console.log('product_price', product_price);
+          price.push(product_price);
+        });
+        console.log('price', price);
+        this.sum = 0;
+        for (let i = 0; i < price.length; i++) {
+          console.log('price[i]', price[i]);
+          this.sum += price[i];
+          console.log('sum', this.sum);
+        }
       },
       error: (error) => {
         console.log('error', error);
@@ -133,6 +148,7 @@ export class CartComponent implements OnInit {
       next: (res) => {
         console.log('res', res);
         this.getCartData();
+
         // this.calTotal();
       },
       error: (error) => {
@@ -142,16 +158,15 @@ export class CartComponent implements OnInit {
   }
 
   calTotal() {
-    let price: any[] = [];
-
-    this.products.map((i: any) => {
-      price.push((i.price - (i.price * i.discount / 100)) * (i.cart_quantity));
-    });
-    console.log("price",price)
-    for (let i = 0; i < price.length; i++) {
-      console.log("price[i]",price[i])
-      this.sum += price[i];
-      console.log("sum",this.sum)
-    }
+    // let price: any[] = [];
+    // this.products.map((i: any) => {
+    //   price.push((i.price - (i.price * i.discount / 100)) * (i.cart_quantity));
+    // });
+    // console.log("price",price)
+    // for (let i = 0; i < price.length; i++) {
+    //   console.log("price[i]",price[i])
+    //   this.sum += price[i];
+    //   console.log("sum",this.sum)
+    // }
   }
 }

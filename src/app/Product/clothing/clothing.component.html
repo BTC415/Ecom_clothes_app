@@ -16,12 +16,18 @@
   </div>
   <div class="row clothing_row">
     <ul class="clothing_ul" style="display: flex">
-      <a><li class="cloth_li" (click)="btnCategory('Dresses ')">Dresses </li></a>
+      <a><li class="cloth_li" (click)="btnCategory('Dresses ')">Dresses</li></a>
       <a><li class="cloth_li" (click)="btnCategory('Suits')">Suits</li></a>
-      <a><li class="cloth_li" (click)="btnCategory('Jumpsuits')">Jumpsuits</li></a>
+      <a
+        ><li class="cloth_li" (click)="btnCategory('Jumpsuits')">
+          Jumpsuits
+        </li></a
+      >
       <a><li class="cloth_li" (click)="btnCategory('Tops')">Tops</li></a>
       <a><li class="cloth_li" (click)="btnCategory('Shorts')">Shorts</li></a>
-      <a><li class="cloth_li" (click)="btnCategory('Trousers')">Trousers</li></a>
+      <a
+        ><li class="cloth_li" (click)="btnCategory('Trousers')">Trousers</li></a
+      >
     </ul>
   </div>
   <div class="row" style="background-color: white; height: 2.5rem"></div>
@@ -30,7 +36,7 @@
     <div class="left_side">
       <select class="sortby" #teams (change)="onSelected(teams.value)">
         <option class="sort_option" value="manual">Sort by: Featured</option>
-        <option class="sort_option" value="a-z" >Alphabetically, A-Z</option>
+        <option class="sort_option" value="a-z">Alphabetically, A-Z</option>
         <option class="sort_option" value="lowToHigh">
           Price, low to high
         </option>
@@ -40,37 +46,41 @@
         <option class="sort_option" value="newToOld">Date, new to old</option>
         <option class="sort_option" value="oldToNew">Date, old to new</option>
       </select>
-   
     </div>
-    
+
     <div class="right_side">
-    <div class="card cloth_card" *ngFor="let product of products" >
-      <a (click)="btnOneProduct(product._id)">
-        <img
-          [src]="env.apiUrl + 'product_images/' + product.images[0].name"
-          class="card-img-top"
-          alt="..."
-      /></a>
-      <div class="product-details">
-        <div class="product_label">
-          <span class="product-label-inner">new season</span>
-        </div>
-        <p class="product-title">
-          {{ product.name }}
-        </p>
-        <p class="product-title">
-          sale Rs. {{ math.trunc((product.price * product.discount) / 100) }}
-          <span style="text-decoration: line-through"
-            >Rs.{{ product.price }}
-          </span>
-        </p>
-        <p class="product-title">{{ product.discount }}% off</p>
-        <!-- <p class="product-title">{{ product.category }}</p>
+      <div class="card cloth_card" *ngFor="let product of products">
+        <a (click)="btnOneProduct(product._id)">
+          <img
+            [src]="env.apiUrl + 'product_images/' + product.images[0].name"
+            class="card-img-top"
+            alt="..."
+        /></a>
+        <div class="product-details">
+          <div class="product_label">
+            <span class="product-label-inner">new season</span>
+          </div>
+          <p class="product-title">
+            {{ product.name }}
+          </p>
+          <p class="product-title">
+            sale Rs.
+            {{
+              math.trunc(
+                product.price - (product.price * product.discount) / 100
+              )
+            }}
+            <span style="text-decoration: line-through"
+              >Rs.{{ product.price }}
+            </span>
+          </p>
+          <p class="product-title">{{ product.discount }}% off</p>
+          <!-- <p class="product-title">{{ product.category }}</p>
         <p class="product-title">{{ product.product_collection }}</p> -->
-        <p class="product-title">{{ product.date }}</p>
+          <p class="product-title">{{ product.date }}</p>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <ng-template #content let-modal class="supportmodel">

@@ -131,32 +131,16 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-1"></div>
-    <div class="col-3 jointcard1">
-      <img src="assets/images/j-1.jpg" class="image1" />
+    <div class="col-4" *ngFor="let product of products; let i = index">
+      <div class="card" style="margin-bottom: 3px" *ngIf="i < 6">
+        <img
+          [src]="env.apiUrl + 'product_images/' + product.images[0].name"
+          class="image1"
+        />
+      </div>
     </div>
-    <div class="col-3 jointcard2">
-      <img src="assets/images/j-2.jpg" class="image2" />
-    </div>
-    <div class="col-3 jointcard3">
-      <img src="assets/images/j-3.jpg" class="image3" />
-    </div>
-    <div class="col-2"></div>
-  </div>
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-3 jointcard1" style="margin-top: 4px">
-      <img src="assets/images/j-4.jpg" class="image1" />
-    </div>
-    <div class="col-3 jointcard2" style="margin-top: 4px">
-      <img src="assets/images/j-5.jpg" class="image2" />
-    </div>
-    <div class="col-3 jointcard3" style="margin-top: 4px">
-      <img src="assets/images/j-6.jpg" class="image3" />
-    </div>
-    <div class="col-2"></div>
   </div>
 </div>
 

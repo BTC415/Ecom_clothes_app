@@ -169,6 +169,7 @@ export class OneProductComponent implements OnInit {
         preview: false,
       },
     ];
+
     this.getAllProducts();
   }
 
@@ -184,14 +185,13 @@ export class OneProductComponent implements OnInit {
         this.modelSize = this.product.modelSize;
         this.modelHeight = this.product.modelHeight;
 
-        // console.log(this.product);
-
-        res.data.images.map((i: any) => {
-          this.galleryImages[i] = {
+        console.log("product =>",this.product);
+        this.product.images.map((i: any) => {
+          this.galleryImages.push({
             small: this.env.apiUrl + 'product_images/' + i.name,
             medium: this.env.apiUrl + 'product_images/' + i.name,
             big: this.env.apiUrl + 'product_images/' + i.name,
-          };
+          });
         });
       },
       error: (error) => {
@@ -272,7 +272,7 @@ export class OneProductComponent implements OnInit {
         },
       });
     } else {
-      this.cartMsg = "You should log in first, then add the item to your bag."
+      this.cartMsg = 'You should log in first, then add the item to your bag.';
       setTimeout(() => {
         this.router.navigate(['login']);
       }, 2500);
