@@ -14,7 +14,6 @@ import { ClothingComponent } from './Product/clothing/clothing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { OneProductComponent } from './Product/one-product/one-product.component';
-import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ContactComponent } from './Social/contact/contact.component';
 import { CartComponent } from './Product/cart/cart.component';
@@ -57,7 +56,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NguCarouselModule,
     BrowserAnimationsModule,
     NgxGalleryModule,
-    IvyCarouselModule,
     CarouselModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
