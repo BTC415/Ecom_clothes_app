@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build --configuration production",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot --configuration production"
   },
   "engines": {
     "node": "16.15.0",
