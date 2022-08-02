@@ -101,6 +101,17 @@ export class ApiService {
     });
   }
 
+  //add support data
+  supportData (data:any):Observable<any>{
+    return this.http.post("http://localhost:3000/postsupportdata",data)
+  }
+
+  // add contact data
+  contactData(data:any):Observable<any>{
+    return this.http.post("http://localhost:3000/contactdata",data)
+  }
+
+
   Userloggedin(): Observable<any> {
     return this.http.get(this.env.apiUrl + 'userloggedin', {
       headers: this.getHeaders(),

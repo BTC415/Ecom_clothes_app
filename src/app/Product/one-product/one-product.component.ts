@@ -6,6 +6,13 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ApiService } from 'src/app/services/api.service';
 import { environment } from '../../../environments/environment';
 import { ToastrService } from 'ngx-toastr';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
 @Component({
   selector: 'app-one-product',
   templateUrl: './one-product.component.html',
@@ -26,7 +33,11 @@ export class OneProductComponent implements OnInit {
   user_id: any;
   token: any;
   msg: any;
+  closeResult = '';
   cartMsg: any;
+  formSupport!: FormGroup;
+  submitted = false;
+  file!: File;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -122,7 +133,9 @@ export class OneProductComponent implements OnInit {
     private api: ApiService,
     private acRoute: ActivatedRoute,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private modalService: NgbModal,
+    private fb: FormBuilder,
   ) {}
 
   ngOnInit(): void {
@@ -170,7 +183,32 @@ export class OneProductComponent implements OnInit {
       },
     ];
 
+    this.formSupport = this.fb.group({
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(20),
+        ],
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      message: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(500),
+        ],
+      ],
+      file: [''],
+    });
+
     this.getAllProducts();
+  }
+
+  get f() {
+    return this.formSupport.controls;
   }
 
   getProduct(_id: any) {
@@ -276,6 +314,78 @@ export class OneProductComponent implements OnInit {
       setTimeout(() => {
         this.router.navigate(['login']);
       }, 2500);
+    }
+  }
+
+   //open support dialog
+   open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          console.log('result', result);
+          this.closeResult = `Closed with: ${result}`;
+          if (result === 'yes') {
+            if (this.formSupport.valid) {
+              this.btnSend();
+            }
+          }
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  onFileSelect(event: any) {
+    if (event.target.files.length > 0) {
+      this.file = event.target.files[0];
+      console.log('file', this.file);
+      const reader = new FileReader();
+      reader.readAsDataURL(this.file);
+      reader.onload = (event) => {
+        // this.profile_preview = reader.result;
+      };
+      this.formSupport.get('file')!.patchValue(this.file);
+      this.formSupport.patchValue({ file: this.file });
+    }
+  }
+
+  btnSend() {
+    this.submitted = true;
+    if (this.formSupport.valid) {
+      console.log('value', this.formSupport.value);
+      const formData = new FormData();
+      formData.append('name', this.formSupport.get('name')!.value);
+      formData.append('email', this.formSupport.get('email')!.value);
+      formData.append('message', this.formSupport.get('message')!.value);
+      formData.append('file', this.formSupport.get('file')!.value);
+      console.log('formData', formData);
+      this.api.supportData(formData).subscribe({
+        next: (res) => {
+          this.toastr.success('Support data sent successfully.', '', {
+            timeOut: 2000,
+          });
+          this.submitted = false;
+          this.formSupport.reset();
+          this.modalService.dismissAll();
+          this.router.navigate(['home']);
+        },
+        error: (error) => {
+          console.log('error', error);
+        },
+      });
+    } else {
     }
   }
 }

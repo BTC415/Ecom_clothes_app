@@ -18,7 +18,7 @@
               <img [src]="this.env.apiUrl + 'product_images/' + slide.name" [alt]="slide.alt" [title]="slide.title">
             </ng-template>
           </ng-container>
-      
+
         </owl-carousel-o> -->
 
 
@@ -144,6 +144,91 @@
         </ng-template>
       </ng-container>
     </owl-carousel-o>
+  </div>
+</div>
+
+<ng-template #content let-modal class="supportmodel">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Leave us a message</h4>
+    <button
+      type="button"
+      class="btn close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true" class="close"> × </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formSupport">
+      <label>Name</label>
+      <input
+        class="form-control suppotinput"
+        formControlName="name"
+        type="text"
+        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+      />
+      <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+        <div *ngIf="f['name'].errors['required']">Name is required</div>
+        <div *ngIf="f['name'].errors['minlength']">
+          Name must be at least 6 characters
+        </div>
+        <div *ngIf="f['name'].errors['maxlength']">
+          Name must not exceed 20 characters
+        </div>
+      </div>
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control suppotinput"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+      />
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email is required</div>
+        <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+      </div>
+      <label>How can we help you?</label>
+      <textarea
+        class="form-control suppotinput"
+        formControlName="message"
+        rows="4"
+        cols="50"
+        [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
+      ></textarea>
+      <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+        <div *ngIf="f['message'].errors['required']">Message is required</div>
+        <div *ngIf="f['message'].errors['minlength']">
+          Message must be at least 6 characters
+        </div>
+        <div *ngIf="f['message'].errors['maxlength']">
+          Message must not exceed 40 characters
+        </div>
+      </div>
+      <label>Attachments</label>
+      <div class="btn btnfile">
+        <input type="file" class="inputfile" (change)="onFileSelect($event)"/>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-dark"
+          (click)="modal.dismiss('Cross click')"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="btnSend()">
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<div class="container-fluid">
+  <div class="row" style="height: 4rem">
+    <button class="myBtn" title="Go to top" (click)="open(content)">
+      <i class="fa fa-question-circle" aria-hidden="true"></i>Support
+    </button>
   </div>
 </div>
 

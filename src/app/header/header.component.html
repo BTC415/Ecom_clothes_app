@@ -49,7 +49,7 @@
               alt="india"
             />
 
-            my bag
+            My bag
             <p class="cart-count">{{ countCart }}</p></a
           >
         </li>
@@ -76,11 +76,12 @@
 
         <li>
           <img
+          *ngIf="firstName"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWj6TEhykdth7c4H_LY92W2pzrWjoeLASvpQ&usqp=CAU"
             width="20"
             alt="india"
             style="margin-left: 10px; cursor: pointer"
-            (click)="btnlogout()"
+            (click)="open(content)"
           />
         </li>
       </ul>
@@ -105,7 +106,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              clothing
+              Clothing
             </a>
             <ul class="dropdown-menu hide" aria-labelledby="navbarDropdown">
               <div class="container">
@@ -220,11 +221,8 @@
           </li>
           <li>
             <div class="new-in">
-              <a class="nav_item newin" (click)="btnNewIn('newin')">newin</a>
+              <a class="nav_item newin" (click)="btnNewIn('newin')">Newin</a>
             </div>
-          </li>
-          <li>
-            <div class="outlet"><a class="nav_item"> Outlet</a></div>
           </li>
           <li>
             <div class="lavish">
@@ -248,3 +246,32 @@
     <div class="col-sm-12" style="height: 3rem"></div>
   </div>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmation</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="d('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>You definitely want to log out.</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="d('Cross click')"
+    >
+      Cancel
+    </button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('yes')">
+      Log out
+    </button>
+  </div>
+</ng-template>

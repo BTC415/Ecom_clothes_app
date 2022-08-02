@@ -52,36 +52,81 @@
       </h6>
     </div>
     <div class="col-md-6">
-      <form class="contactform">
+      <form class="contactform" [formGroup]="formContact">
         <label>Name</label>
         <input
           class="form-control"
+          formControlName="name"
           type="text"
           placeholder="Name"
           required
-        /><br />
+          [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+        />
+        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+          <div *ngIf="f['name'].errors['required']">name is required</div>
+          <div *ngIf="f['name'].errors['minlength']">
+            name must be at least 3 characters
+          </div>
+          <div *ngIf="f['name'].errors['maxlength']">
+            name must not exceed 20 characters
+          </div>
+        </div>
+        <br />
         <label>Email</label>
         <input
           class="form-control"
           type="text"
           placeholder="Email"
+          formControlName="email"
           required
-        /><br />
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">Email is required</div>
+          <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+        </div>
+        <br />
         <label>Phone Number</label>
         <input
           class="form-control"
-          type="text"
+          type="number"
           placeholder="Phone Number"
+          formControlName="phone_number"
+          [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"
           required
-        /><br />
+        />
+        <div
+          *ngIf="submitted && f['phone_number'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f['phone_number'].errors['required']">
+            phone_number is required
+          </div>
+          <div *ngIf="f['phone_number'].errors['pattern']">
+            Please, Enter 10 digit Mobile Number.
+          </div>
+        </div>
+        <br />
         <label>Message</label>
         <input
           class="form-control"
           type="text"
           placeholder="Message"
+          formControlName="message"
           required
-        /><br />
-        <button class="btn btncontact">Send</button>
+          [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
+        />
+        <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+          <div *ngIf="f['message'].errors['required']">Message is required</div>
+          <div *ngIf="f['message'].errors['minlength']">
+            Message must be at least 3 characters
+          </div>
+          <div *ngIf="f['message'].errors['maxlength']">
+            Message must not exceed 40 characters
+          </div>
+        </div>
+        <br />
+        <button class="btn btncontact" (click)="btnSend()">Send</button>
       </form>
     </div>
   </div>

@@ -132,7 +132,6 @@
   padding: 0;
   font-size: 2.5rem;
   letter-spacing: 0;
-  text-transform: lowercase;
   text-align: center;
   font-weight: 900;
 }
@@ -142,7 +141,6 @@
   font-size: 1rem;
   line-height: 1.6rem;
   letter-spacing: 2px;
-  text-transform: lowercase;
   margin: 0 0 35px;
   font-weight: 700;
   font-size: 17px;
@@ -198,7 +196,6 @@
   padding: 0;
   font-size: 2.5rem;
   letter-spacing: 0;
-  text-transform: lowercase;
   text-align: center;
   font-weight: 700;
   line-height: 4;
@@ -246,7 +243,6 @@
   padding: 0;
   font-size: 34px;
   letter-spacing: 1px;
-  text-transform: lowercase;
   text-align: center;
   font-weight: 900;
   margin-bottom: 11px;
@@ -264,7 +260,6 @@ input:focus,
 .form-control {
   font-family: fugueregular;
   font-size: 17.9px;
-  text-transform: lowercase;
   margin: 0 0 0 2.5%;
   font-weight: 400;
   letter-spacing: 1px;
@@ -294,7 +289,6 @@ button:focus,
   font-size: 25px;
   letter-spacing: 1px;
   font-weight: 400;
-  text-transform: lowercase;
   font-weight: 600;
   margin-bottom: 33px;
 }
@@ -389,9 +383,7 @@ label {
   }
 }
 
-// @media (min-width: 576px)
-// {
-//     .modal-dialog {
-//       margin: 8em auto !important;
-//     }
-// }
+.ng-star-inserted {
+  margin-left: 8px;
+  margin-top: 8px;
+}

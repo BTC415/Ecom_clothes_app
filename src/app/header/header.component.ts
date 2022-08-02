@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,12 @@ export class HeaderComponent implements OnInit {
   lastName: any;
   countCart: any;
   searchValue: string = '';
-  constructor(private router: Router, private api: ApiService) {
+  closeResult = '';
+  constructor(
+    private router: Router,
+    private api: ApiService,
+    private modalService: NgbModal
+  ) {
     this.changeText = false;
   }
 
@@ -36,9 +42,37 @@ export class HeaderComponent implements OnInit {
     this.isSticky = top > 100 ? true : false;
     // console.log('#######', top, this.isSticky)
   };
+
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+          if (result === 'yes') {
+            this.btnlogout();
+            // this.deleteMultiple_products();
+          }
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
   btnlogout() {
     localStorage.removeItem('token');
-    this.router.navigate(['login']);
+    this.router.navigate(['home']);
   }
 
   HeaderName() {
@@ -73,7 +107,7 @@ export class HeaderComponent implements OnInit {
   btnSearch() {
     console.log('searchValue ==> ', this.searchValue);
     this.router.navigate(['search'], {
-      queryParams: { q : this.searchValue },
+      queryParams: { q: this.searchValue },
     });
   }
 

@@ -162,6 +162,7 @@ label {
   margin-left: 18px;
   font-family: Avenir Medium;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .btnfile {
   border-width: 0.142857rem;
@@ -212,4 +213,8 @@ label {
   {
     margin: 8em auto !important;
   }
+}
+.invalid-feedback {
+  margin-left: 17px;
+  margin-top: 9px;
 }

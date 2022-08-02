@@ -68,7 +68,7 @@ export class ProfileComponent implements OnInit {
   onFileSelect(event: any) {
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
-      // console.log('file', this.file);
+      console.log('file', this.file);
       const reader = new FileReader();
       reader.readAsDataURL(this.file);
       reader.onload = (event) => {
